@@ -3,10 +3,8 @@ class User < ApplicationRecord
       :case_sensitive => false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   attr_accessor :login
 
   def self.find_for_database_authentication(warden_conditions)
