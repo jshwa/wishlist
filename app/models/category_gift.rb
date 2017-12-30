@@ -1,0 +1,2 @@
+class CategoryGift < ApplicationRecord
+end

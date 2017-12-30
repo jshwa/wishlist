@@ -1,0 +1,2 @@
+class ListGift < ApplicationRecord
+end
