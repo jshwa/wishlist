@@ -10,7 +10,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
+  after_create :create_list
+
   attr_accessor :login
+
+  def create_list
+    self.list = List.new
+    save
+  end
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
