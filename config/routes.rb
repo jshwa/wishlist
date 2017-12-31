@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :gifts, only: [:index, :new, :edit, :show]
   resources :wishlists, only: [:index, :new, :edit, :show]
-  
+  resources :categories, only: [:index, :new, :edit, :show]
+
 end
