@@ -2,6 +2,6 @@
 
 <ul>
 <% @lists.each do |list| %>
-  <%= link_to list.user.username, list_path(list)  %>
+  <%= link_to list.user.username, list_path(list) if list.user != current_user %>
 <% end %>
 </ul>
