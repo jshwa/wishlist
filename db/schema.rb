@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20171230003908) do
   end
 
   create_table "list_gifts", force: :cascade do |t|
-    t.integer "gifts_id"
+    t.integer "gift_id"
     t.integer "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
