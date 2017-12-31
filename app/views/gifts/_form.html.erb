@@ -1,10 +1,12 @@
 <%= form_for gift do |g| %>
   <%= g.label :name %>
   <%= g.text_field :name %> <br><br>
-  <%= g.label :description %>
-  <%= g.text_field :description %> <br><br>
+  <%= g.label :price %>
+  <%= g.text_field :price %> <br><br>
   <%= g.label :url %>
   <%= g.text_field :url %> <br><br>
+  <%= g.label :description %>
+  <%= g.text_area :description %> <br><br>
 
 <h2>Pick a Category: </h2>
   <%= g.fields_for :categories do |cat| %>
