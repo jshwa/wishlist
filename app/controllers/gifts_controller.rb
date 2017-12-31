@@ -3,6 +3,7 @@ class GiftsController < ApplicationController
   end
 
   def new
+    @gift = Gift.new
   end
 
   def edit
