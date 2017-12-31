@@ -1,5 +1,6 @@
 class GiftsController < ApplicationController
   def index
+    @gifts = Gift.all
   end
 
   def new
@@ -16,6 +17,10 @@ class GiftsController < ApplicationController
 
   def edit
 
+  end
+
+  def show
+    @gift = Gift.find_by(id: params[:id])
   end
 
   private

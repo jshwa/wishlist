@@ -1,0 +1,10 @@
+<h1><%= @gift.name %></h1>
+
+
+<h3>Price: </h3> <%= @gift.price %>
+<h3>Description: </h3><%= @gift.description %>
+
+<h3>Categories: </h3>
+<% @gift.categories.each do |cat| %>
+  <%= cat.name %>
+<% end %>

@@ -2,7 +2,7 @@
 
 <ul>
   <% @list.gifts.each do |gift| %>
-    <%= gift.name %>
+    <li><%= link_to gift.name, gift_path(gift) %></li> <br>
   <% end %>
 </ul>
 

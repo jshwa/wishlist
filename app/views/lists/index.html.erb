@@ -5,3 +5,5 @@
   <%= link_to list.user.username, list_path(list) if list.user != current_user %>
 <% end %>
 </ul>
+
+<%= link_to "Or browse all gifts", gifts_path %>
