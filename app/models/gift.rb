@@ -50,4 +50,12 @@ class Gift < ApplicationRecord
   def self.amazon_search_results(keywords)
     HTTParty.get(search_aws_by_keyword(keywords))
   end
+
+  def self.new_gift_from_amazon(item)
+    new_gift = self.new
+    new_gift.image = item["LargeImage"]["URL"]
+    new_gift.name = item["ItemAttributes"]["Title"]
+    new_gift.url = item["DetailPageURL"]
+    new_gift.price = item["OfferSummary"]["LowestNewPrice"]["FormattedPrice"] 
+  end
 end
