@@ -1,1 +1,14 @@
-<%= item %>
+<h2>Results from Amazon: </h2>
+
+
+<% Gift.amazon_search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
+  <div>
+    <%= image_tag item["LargeImage"]["URL"] %> <br>
+    <%= link_to item["ItemAttributes"]["Title"], item["DetailPageURL"], target: "_blank" %> | <%= item["OfferSummary"]["LowestNewPrice"]["FormattedPrice"]%><br> 
+    <ul>
+      <% item["ItemAttributes"]["Feature"].each do |feature| %>
+        <li><%= feature %></li>
+      <% end %>
+    </ul><br>
+  </div>
+<% end %>

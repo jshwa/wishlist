@@ -46,4 +46,8 @@ class Gift < ApplicationRecord
     }
     generate_aws_request_url(params)
   end
+
+  def self.amazon_search_results(keywords)
+    HTTParty.get(search_aws_by_keyword(keywords))
+  end
 end
