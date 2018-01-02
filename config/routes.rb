@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :lists, only: [:index, :edit, :show]
   resources :categories
 
+  post 'gifts/new' => 'gifts#new'
+
 end

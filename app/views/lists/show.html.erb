@@ -6,4 +6,8 @@
   <% end %>
 </ul>
 
-<%= link_to "Add a Gift", new_gift_path if @list.user == current_user %>
+<% if @list.user = current_user %>
+    <%= form_tag new_gift_path %>
+    <%= text_field_tag 'gift_search', nil, placeholder: 'Search for a new gift...' %>
+    <%= submit_tag 'Search' %>
+<% end %>
