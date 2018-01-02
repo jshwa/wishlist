@@ -28,7 +28,7 @@ class Gift < ApplicationRecord
     string_to_sign = "GET\n#{ENDPOINT}\n#{REQUEST_URI}\n#{canonical_query_string}"
 
     # Generate the signature required by the Product Advertising API
-    signature = Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha256'), SECRET_KEY, string_to_sign)).strip()
+    signature = Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha256'), ENV['AWS_SECRET_KEY'], string_to_sign)).strip()
 
     # Generate the signed URL
     request_url = "http://#{ENDPOINT}#{REQUEST_URI}?#{canonical_query_string}&Signature=#{URI.escape(signature, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))}"
@@ -38,12 +38,12 @@ class Gift < ApplicationRecord
     params = {
       "Service" => "AWSECommerceService",
       "Operation" => "ItemSearch",
-      "AWSAccessKeyId" => ENV[AWS_ACCESS_KEY_ID],
-      "AssociateTag" => ENV[AWS_ASSOCIATE_TAG],
+      "AWSAccessKeyId" => ENV['AWS_ACCESS_KEY_ID'],
+      "AssociateTag" => ENV['AWS_ASSOCIATE_TAG'],
       "SearchIndex" => "All",
       "Keywords" => keywords,
       "ResponseGroup" => "Images,ItemAttributes,Offers"
     }
-    generate_request_url(params)
+    generate_aws_request_url(params)
   end
 end
