@@ -53,6 +53,7 @@ class Gift < ApplicationRecord
 
   def self.new_gift_from_amazon(item)
     new_gift = self.new
+
     if item["MediumImage"]["URL"]
       new_gift.image = item["MediumImage"]["URL"]
     elsif item["ImageSets"]["ImageSet"][0]["MediumImage"]["URL"]
@@ -60,9 +61,19 @@ class Gift < ApplicationRecord
     else
       new_gift.image = ""
     end
+
     new_gift.name = item["ItemAttributes"]["Title"]
     new_gift.url = item["DetailPageURL"]
     new_gift.price = item["OfferSummary"]["LowestNewPrice"]["Amount"].to_f/100 if item["OfferSummary"]["LowestNewPrice"]
+
+    if item["ItemAttributes"]["Feature"].is_a?(Array)
+      new_gift.description = item["ItemAttributes"]["Feature"].join(" ")
+    elsif item["ItemAttributes"]["Feature"]
+      new_gift.description = item["ItemAttributes"]["Feature"]
+    else
+      new_gift.description = "No description"
+    end
+
     new_gift
   end
 end

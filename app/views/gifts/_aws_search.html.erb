@@ -6,11 +6,7 @@
     <% new_gift = Gift.new_gift_from_amazon(item) %>
     <%= image_tag new_gift.image %> <br>
     <%= link_to new_gift.name, new_gift.url, target: "_blank" %> | <%= number_to_currency(new_gift.price) %><br>
-    <ul>
-      <% item["ItemAttributes"]["Feature"].each do |feature| %>
-        <li><%= feature %></li>
-      <% end %>
-    </ul>
+    <%= new_gift.description %>
 
     <%= form_for new_gift do |g|%>
     <%= g.hidden_field :name %>
