@@ -60,7 +60,7 @@ class Gift < ApplicationRecord
   end
 
   def self.new_gift_from_amazon(item)
-    new_gift = self.new
+    new_gift = self.where(url: item["DetailPageURL"]).first_or_initialize
 
     if item["MediumImage"]
       new_gift.image = item["MediumImage"]["URL"]

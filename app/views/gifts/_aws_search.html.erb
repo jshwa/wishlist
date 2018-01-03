@@ -8,16 +8,18 @@
     <% new_gift.categories.build(name: item["ItemAttributes"]["Binding"]) %>
     <br><br>
 
-    <%= form_for new_gift, url: gifts_path, html: {method: "post"} do |g|%>
-    <%= g.hidden_field :name %>
-    <%= g.hidden_field :price%>
-    <%= g.hidden_field :url %>
-    <%= g.hidden_field :image %>
-    <%= g.hidden_field :description %>
-    <%= g.fields_for :categories do |cat| %>
-      <%= cat.hidden_field :name %>
-    <% end %>
-    <%= g.submit "Add to Wishlist" %>
+    <% unless new_gift.persisted? %>
+      <%= form_for new_gift, url: gifts_path, html: {method: "post"} do |g|%>
+      <%= g.hidden_field :name %>
+      <%= g.hidden_field :price%>
+      <%= g.hidden_field :url %>
+      <%= g.hidden_field :image %>
+      <%= g.hidden_field :description %>
+      <%= g.fields_for :categories do |cat| %>
+        <%= cat.hidden_field :name %>
+      <% end %>
+      <%= g.submit "Add to Wishlist" %>
+      <% end %>
     <% end %>
   </div>
   <br><br>
