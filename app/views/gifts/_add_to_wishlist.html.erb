@@ -1,0 +1,5 @@
+<% unless current_user.gifts.include?(gift) %>
+  <%= form_for gift, url: gift_path(gift), html: {method: "patch"} do |g|  %>
+    <%= g.submit "Add to Wishlist" %>
+  <% end %> </td>
+<% end %>

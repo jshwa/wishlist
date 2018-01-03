@@ -19,7 +19,7 @@ class GiftsController < ApplicationController
 
   def update
     if @gift.users.where(id: current_user.id).exists?
-      flash[:notice] = " #{@gift.name}is already on your wishlist"
+      flash[:notice] = " #{@gift.name} is already on your wishlist"
       redirect_to list_path(current_user.list)
     else
       @gift.lists.push current_user.list
