@@ -1,3 +1,9 @@
 <h1><%= @list.user.username.capitalize %>'s Wishlist</h1>
 
-<%= render partial: 'gifts/gift_list', locals: {gifts: @list.gifts} %>
+<table>
+<% @list.gifts.each do |gift| %>
+  <tr><td><%= image_tag gift.image %></td>
+      <td><%= link_to gift.name, gift_path(gift) %><br> <br>
+  </tr>
+<% end %>
+</table>

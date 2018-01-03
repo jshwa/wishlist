@@ -1,4 +1,6 @@
-<% unless current_user.gifts.include?(gift) %>
+<% if current_user.gifts.include?(gift) %>
+  <%= link_to "On your Wishlist", list_path(current_user.list)%>
+<% else %>
   <%= form_for gift, url: gift_path(gift), html: {method: "patch"} do |g|  %>
     <%= g.submit "Add to Wishlist" %>
   <% end %> </td>
