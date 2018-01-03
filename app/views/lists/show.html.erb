@@ -1,13 +1,13 @@
 <h1><%= @list.user.username.capitalize %>'s Wishlist</h1
 
-<ul>
-  <% @list.gifts.each do |gift| %>
-    <li><%= link_to gift.name, gift_path(gift) %></li> <br>
-  <% end %>
-</ul>
-
 <% if @list.user = current_user %>
     <%= form_tag new_gift_path %>
     <%= text_field_tag 'gift_search', nil, placeholder: 'Search for a new gift...' %>
     <%= submit_tag 'Search' %>
 <% end %>
+
+<ul>
+  <% @list.gifts.each do |gift| %>
+    <li><%= link_to gift.name, gift_path(gift) %></li> <br>
+  <% end %>
+</ul>

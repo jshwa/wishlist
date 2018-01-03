@@ -2,7 +2,7 @@
 
 <%= image_tag @gift.image %> <br>
 <strong>Price:</strong> <%= number_to_currency(@gift.price) %>
-<h3>Description: </h3><%= @gift.description %>
+<h3>Description: </h3><%= @gift.description %> <br>
 <%= link_to "See it on Amazon", @gift.url, target: "_blank" %>
 
 <h3>Categories: </h3>

@@ -7,7 +7,7 @@
     <%= image_tag new_gift.image %> <br>
     <%= link_to new_gift.name, new_gift.url, target: "_blank" %> | <%= number_to_currency(new_gift.price) %><br>
     <%= new_gift.description %>
-
+    <br><br>
     <%= form_for new_gift do |g|%>
     <%= g.hidden_field :name %>
     <%= g.hidden_field :price%>

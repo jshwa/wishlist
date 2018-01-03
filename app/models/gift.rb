@@ -54,10 +54,12 @@ class Gift < ApplicationRecord
   def self.new_gift_from_amazon(item)
     new_gift = self.new
 
-    if item["MediumImage"]["URL"]
+    if item["MediumImage"]
       new_gift.image = item["MediumImage"]["URL"]
-    elsif item["ImageSets"]["ImageSet"][0]["MediumImage"]["URL"]
+    elsif item["ImageSets"]["ImageSet"][0]
       new_gift.image = item["ImageSets"]["ImageSet"][0]["MediumImage"]["URL"]
+    elsif item["ImageSets"]["ImageSet"]
+      new_gift.image = item["ImageSets"]["ImageSet"]["MediumImage"]["URL"]
     else
       new_gift.image = ""
     end
