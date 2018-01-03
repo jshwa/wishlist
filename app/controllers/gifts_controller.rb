@@ -19,6 +19,16 @@ class GiftsController < ApplicationController
 
   end
 
+  def update
+    @gift = Gift.find_by(id: params[:id])
+    unless @gift.users.where(id: current_user.id).exists?
+      @gift.lists.push current_user.list
+      redirect_to list_path(current_user.list)
+    end
+    flash[:notice] = " #{@gift.name}is already on your wishlist"
+    redirect_to list_path(current_user.list)
+  end
+
   def show
     @gift = Gift.find_by(id: params[:id])
   end

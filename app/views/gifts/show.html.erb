@@ -1,5 +1,9 @@
 <h1><%= @gift.name.capitalize %></h1>
 
+<%= form_for @gift do |g|  %>
+  <%= g.submit "Add to Wishlist" %>
+<% end %>
+
 <%= image_tag @gift.image %> <br>
 <strong>Price:</strong> <%= number_to_currency(@gift.price) %>
 <h3>Description: </h3><%= @gift.description %> <br>
