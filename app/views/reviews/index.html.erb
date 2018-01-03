@@ -1,7 +1,9 @@
 <h1>Reviews for: <%= @gift.name %> </h1>
 
 <% @gift.reviews.each do |review| %>
-  <%= review.user "on" review.created_on%>
+  <%= review.user %> on <%= review.created_on %>
   <%= review.stars %>
   <%= review.comment %>
 <% end %>
+
+<%= link_to "Write a review", new_gift_review_path(@gift) %>
