@@ -1,0 +1,5 @@
+<h1>Review for <%= @review.gift.name %></h1>
+<strong><%= @review.user.username %></strong> on <%= @review.created_at.strftime("%b %d, %Y") %>
+<p><%= @review.comment %></p>
+
+<%= link_to "Edit this review", edit_gift_review_path(@review.gift, @review) if @review.user == current_user %>
