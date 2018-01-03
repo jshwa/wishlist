@@ -56,6 +56,7 @@ class Gift < ApplicationRecord
     new_gift.image = item["LargeImage"]["URL"]
     new_gift.name = item["ItemAttributes"]["Title"]
     new_gift.url = item["DetailPageURL"]
-    new_gift.price = item["OfferSummary"]["LowestNewPrice"]["FormattedPrice"] 
+    new_gift.price = item["ItemAttributes"]["ListPrice"]["Amount"] if item["ItemAttributes"]["ListPrice"]
+    new_gift
   end
 end
