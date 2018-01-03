@@ -6,4 +6,5 @@
 <% end %>
 </ul>
 
-<%= link_to "Or browse all gifts", gifts_path %>
+<h1>Or Browse Gifts</h1>
+<%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>

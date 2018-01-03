@@ -1,5 +1,5 @@
 <h1><%= params[:gift_search] ? "From Other Wishlists: " : "Browse Gifts" %></h1>
-<%= render partial: 'gift_list', locals: {gifts: @gifts} %>
+<%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>
 
 <h1>Results from Amazon: </h1>
-<%= render partial: 'aws_search', locals: {item: params[:gift_search]} %>
+<%= render partial: 'gifts/aws_search', locals: {item: params[:gift_search]} %>

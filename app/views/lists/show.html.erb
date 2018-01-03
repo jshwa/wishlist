@@ -1,9 +1,3 @@
 <h1><%= @list.user.username.capitalize %>'s Wishlist</h1>
 
-<% if @list.user == current_user %>
-    <%= form_tag gifts_path, method: :get %>
-    <%= text_field_tag 'gift_search', nil, placeholder: 'Search for a new gift...' %>
-    <%= submit_tag 'Search', name:nil %>
-<% end %>
-
 <%= render partial: 'gifts/gift_list', locals: {gifts: @list.gifts} %>
