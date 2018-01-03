@@ -4,7 +4,8 @@ class CreateGifts < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :url
       t.string :description
-      t.integer :price
+      t.decimal :price, precision: 8, scale: 2
+      t.string :image
       t.datetime :created_at
       t.datetime :updated_at
 

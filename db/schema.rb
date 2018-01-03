@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20180103212413) do
     t.string "url"
     t.string "description"
     t.decimal "price", precision: 8, scale: 2
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
   end
 
   create_table "list_gifts", force: :cascade do |t|
