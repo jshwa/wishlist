@@ -10,7 +10,7 @@
       <% item["ItemAttributes"]["Feature"].each do |feature| %>
         <li><%= feature %></li>
       <% end %>
-    </ul><br>
+    </ul>
 
     <%= form_for new_gift do |g|%>
     <%= g.hidden_field :name %>
@@ -21,4 +21,5 @@
     <%= g.submit "Add to Wishlist" %>
     <% end %>
   </div>
+  <br><br>
 <% end %>

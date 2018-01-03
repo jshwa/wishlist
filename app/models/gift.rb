@@ -53,7 +53,7 @@ class Gift < ApplicationRecord
 
   def self.new_gift_from_amazon(item)
     new_gift = self.new
-    new_gift.image = item["LargeImage"]["URL"]
+    new_gift.image = item["ImageSets"]["ImageSet"][0]["MediumImage"]["URL"]
     new_gift.name = item["ItemAttributes"]["Title"]
     new_gift.url = item["DetailPageURL"]
     new_gift.price = item["OfferSummary"]["LowestNewPrice"]["Amount"].to_f/100 if item["OfferSummary"]["LowestNewPrice"]
