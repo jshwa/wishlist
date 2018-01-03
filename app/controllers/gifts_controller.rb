@@ -37,6 +37,9 @@ class GiftsController < ApplicationController
   end
 
   def set_gift
-    @gift = Gift.find_by(id: params[:id])
+    if @gift = Gift.find_by(id: params[:id])
+    else
+      redirect_to gifts_path
+    end
   end
 end
