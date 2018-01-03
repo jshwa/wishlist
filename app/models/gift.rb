@@ -87,4 +87,8 @@ class Gift < ApplicationRecord
 
     new_gift
   end
+
+  def wrote_review?(user)
+    reviews.where(user: user)
+  end
 end
