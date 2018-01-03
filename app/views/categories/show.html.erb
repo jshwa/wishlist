@@ -1,2 +1,7 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1>Category: <%= @category.name %></h1>
+
+<ul>
+<% @category.gifts.each do |gift| %>
+  <li><%= link_to gift.name, gift_path(gift) %></li>
+<% end %>
+</ul>
