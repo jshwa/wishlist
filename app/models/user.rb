@@ -2,6 +2,7 @@ class User < ApplicationRecord
 
   has_one :list
   has_many :gifts, through: :list
+  nas_many :reviews
 
   validates :username, :presence => true, :uniqueness => {
       :case_sensitive => false }

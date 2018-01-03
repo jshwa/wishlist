@@ -3,7 +3,8 @@
 <table>
 <% @list.gifts.each do |gift| %>
   <tr><td><%= image_tag gift.image %></td>
-      <td><%= link_to gift.name, gift_path(gift) %><br> <br>
+      <td><%= link_to gift.name, gift_path(gift) %><br><br>
+          <%= button_tag "Review", gift_reviews_path(gift) %>
   </tr>
 <% end %>
 </table>

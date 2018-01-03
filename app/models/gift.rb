@@ -4,6 +4,7 @@ class Gift < ApplicationRecord
   has_many :users, through: :lists
   has_many :category_gifts
   has_many :categories, through: :category_gifts
+  has_many :reviews
 
   # Amazon API Constants
   ENDPOINT = "webservices.amazon.com"
