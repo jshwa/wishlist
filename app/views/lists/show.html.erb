@@ -6,11 +6,4 @@
     <%= submit_tag 'Search', name:nil %>
 <% end %>
 
-<table>
-  <% @list.gifts.each do |gift| %>
-    <tr>
-      <td><%= image_tag gift.image %></td>
-      <td><%= link_to gift.name, gift_path(gift) %></td>
-    </tr>
-  <% end %>
-</table>
+<%= render partial: 'gifts/gift_list', locals: {gifts: @list.gifts} %>

@@ -1,9 +1,5 @@
-<h1>Browse Gifts</h1>
+<h1><%= params[:gift_search] ? "From Other Wishlists: " : "Browse Gifts" %></h1>
+<%= render partial: 'gift_list', locals: {gifts: @gifts} %>
 
-<table>
-<% @gifts.each do |gift| %>
-  <tr><td><%= image_tag gift.image %></td>
-      <td><%= link_to gift.name, gift_path(gift) %></td>
-  </tr>
-<% end %>
-</table>
+<h1>Results from Amazon: </h1>
+<%= render partial: 'aws_search', locals: {item: params[:gift_search]} %>

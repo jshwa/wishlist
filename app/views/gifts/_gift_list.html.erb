@@ -1,0 +1,7 @@
+<table>
+<% gifts.each do |gift| %>
+  <tr><td><%= image_tag gift.image %></td>
+      <td><%= link_to gift.name, gift_path(gift) %></td>
+  </tr>
+<% end %>
+</table>
