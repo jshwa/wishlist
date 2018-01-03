@@ -1,9 +1,11 @@
 <%= form_for gift do |g| %>
   <%= g.label :name %>
   <%= g.text_field :name %> <br><br>
-  <%= g.label :price %>
+  <%= g.label "Price $" %>
   <%= g.text_field :price %> <br><br>
-  <%= g.label :url %>
+  <%= g.label "Image URL" %>
+  <%= g.text_field :image %> <br><br>
+  <%= g.label "Where to buy(URL)" %>
   <%= g.text_field :url %> <br><br>
   <%= g.label :description %>
   <%= g.text_area :description %> <br><br>
