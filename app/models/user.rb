@@ -35,4 +35,9 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
+
+  def wrote_review?(gift)
+    review = gift.reviews.where(user: self).pluck(:id)
+    review == [] ? false : review
+  end
 end

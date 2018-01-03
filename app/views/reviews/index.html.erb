@@ -4,6 +4,7 @@
   <strong><%= review.user.username %></strong> on <%= review.created_at.strftime("%b %d, %Y") %> <br>
   <p>Stars: <%= review.stars %> <br><br>
   Review: <%= review.comment %> <br><br></p>
+  <%= link_to "Edit Review", edit_gift_review_path(@gift, review) if current_user.wrote_review?(@gift) %>
 <% end %>
 
-<%= link_to "Write a review", new_gift_review_path(@gift) if !@gift.wrote_review?(current_user) %>
+<%= link_to "Write a review", new_gift_review_path(@gift) if !current_user.wrote_review?(@gift) %>
