@@ -1,4 +1,4 @@
-<h1><%= @list.user.username.capitalize %>'s Wishlist</h1
+<h1><%= @list.user.username.capitalize %>'s Wishlist</h1>
 
 <% if @list.user = current_user %>
     <%= form_tag new_gift_path %>

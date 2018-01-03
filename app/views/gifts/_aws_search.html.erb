@@ -7,13 +7,18 @@
     <%= image_tag new_gift.image %> <br>
     <%= link_to new_gift.name, new_gift.url, target: "_blank" %> | <%= number_to_currency(new_gift.price) %><br>
     <%= new_gift.description %>
+    <% new_gift.categories.build(name: item["ItemAttributes"]["Binding"]) %>
     <br><br>
+
     <%= form_for new_gift do |g|%>
     <%= g.hidden_field :name %>
     <%= g.hidden_field :price%>
     <%= g.hidden_field :url %>
     <%= g.hidden_field :image %>
     <%= g.hidden_field :description %>
+    <%= g.fields_for :categories do |cat| %>
+      <%= cat.hidden_field :name %>
+    <% end %>
     <%= g.submit "Add to Wishlist" %>
     <% end %>
   </div>
