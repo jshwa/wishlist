@@ -1,5 +1,3 @@
-<h2>Results from Amazon: </h2>
-
 
 <% Gift.amazon_search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
   <div>
@@ -10,7 +8,7 @@
     <% new_gift.categories.build(name: item["ItemAttributes"]["Binding"]) %>
     <br><br>
 
-    <%= form_for new_gift do |g|%>
+    <%= form_for new_gift, url: gifts_path, html: {method: "post"} do |g|%>
     <%= g.hidden_field :name %>
     <%= g.hidden_field :price%>
     <%= g.hidden_field :url %>

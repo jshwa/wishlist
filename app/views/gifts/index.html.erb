@@ -1,5 +1,9 @@
-<h1><%= params[:gift_search] ? "From Other Wishlists: " : "Browse Gifts" %></h1>
+<h1><%= "Results for #{params[:gift_search]}" unless params[:gift_search] == "" %></h1>
+
+<h2><%= params[:gift_search] == "" ? "Browse Gifts" : "From Other Wishlists: " %></h2>
 <%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>
 
-<h1>Results from Amazon: </h1>
-<%= render partial: 'gifts/aws_search', locals: {item: params[:gift_search]} %>
+<% unless params[:gift_search] == "" %>
+  <h2>From Amazon: </h2>
+  <%= render partial: 'gifts/aws_search', locals: {item: params[:gift_search]} %>
+<% end %>

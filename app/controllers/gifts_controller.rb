@@ -11,8 +11,8 @@ class GiftsController < ApplicationController
   def create
     gift = Gift.new(gift_params)
     gift.save
-    gift.lists << current_user.list
-    redirect_to list_path(current_user.list.id)
+    gift.lists.push(current_user.list)
+    redirect_to list_path(current_user.list)
   end
 
   def update
