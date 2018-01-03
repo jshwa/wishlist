@@ -10,7 +10,7 @@
 
   <body>
     <%= render 'layouts/header' %> <br>
-    <%= render 'gifts/aws_search_form' %>
+    <%= render 'gifts/aws_search_form' unless current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
