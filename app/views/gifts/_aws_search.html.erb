@@ -3,12 +3,22 @@
 
 <% Gift.amazon_search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
   <div>
-    <%= image_tag item["LargeImage"]["URL"] %> <br>
-    <%= link_to item["ItemAttributes"]["Title"], item["DetailPageURL"], target: "_blank" %> | <%= item["OfferSummary"]["LowestNewPrice"]["FormattedPrice"]%><br> 
+    <%= new_gift = Gift.new_gift_from_amazon(item) %>
+    <%= image_tag new_gift.image %> <br>
+    <%= link_to new_gift.name, new_gift.url, target: "_blank" %> | <%= new_gift.price.to_formatted_price %><br>
     <ul>
       <% item["ItemAttributes"]["Feature"].each do |feature| %>
         <li><%= feature %></li>
       <% end %>
     </ul><br>
+
+    <%= form_for new_gift do |g|%>
+    <%= g.hidden_field :name %>
+    <%= g.hidden_field :price%>
+    <%= g.hidden_field :url %>
+    <%= g.hidden_field :image %>
+    <%= g.hidden_field :description %>
+    <%= g.submit "Add to Wishlist" %>
+    <% end %>
   </div>
 <% end %>
