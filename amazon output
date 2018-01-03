@@ -1,0 +1,126 @@
+{ "ASIN"=>"B01LWCWM4O",
+  "DetailPageURL"=>"https://www.amazon.com/3dRose-mug_235574_5-Sake-Tone-White/dp/B01LWCWM4O?SubscriptionId=AKIAI4G46C52TJG5WRWA&tag=boozeandsnark-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B01LWCWM4O",
+  "ItemLinks"=>{
+    "ItemLink"=>[{
+      "Description"=>"Technical Details",
+      "URL"=>"https://www.amazon.com/3dRose-mug_235574_5-Sake-Tone-White/dp/tech-data/B01LWCWM4O?SubscriptionId=AKIAI4G46C52TJG5WRWA&tag=boozeandsnark-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01LWCWM4O"},
+      {
+      "Description"=>"Add To Baby Registry", "URL"=>"https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B01LWCWM4O&SubscriptionId=AKIAI4G46C52TJG5WRWA&tag=boozeandsnark-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01LWCWM4O"},
+      {
+      "Description"=>"Add To Wedding Registry", "URL"=>"https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B01LWCWM4O&SubscriptionId=AKIAI4G46C52TJG5WRWA&tag=boozeandsnark-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01LWCWM4O"},
+      {
+      "Description"=>"Add To Wishlist", "URL"=>"https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B01LWCWM4O&SubscriptionId=AKIAI4G46C52TJG5WRWA&tag=boozeandsnark-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01LWCWM4O"},
+      {
+      "Description"=>"Tell A Friend", "URL"=>"https://www.amazon.com/gp/pdp/taf/B01LWCWM4O?SubscriptionId=AKIAI4G46C52TJG5WRWA&tag=boozeandsnark-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01LWCWM4O"},
+      {
+      "Description"=>"All Customer Reviews", "URL"=>"https://www.amazon.com/review/product/B01LWCWM4O?SubscriptionId=AKIAI4G46C52TJG5WRWA&tag=boozeandsnark-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01LWCWM4O"},
+      {
+      "Description"=>"All Offers", "URL"=>"https://www.amazon.com/gp/offer-listing/B01LWCWM4O?SubscriptionId=AKIAI4G46C52TJG5WRWA&tag=boozeandsnark-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01LWCWM4O"}]},
+  "SmallImage"=>{
+    "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL75_.jpg", "Height"=>{"__content__"=>"75", "Units"=>"pixels"},
+    "Width"=>{"__content__"=>"75", "Units"=>"pixels"}},
+  "MediumImage"=>{
+    "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL160_.jpg", "Height"=>{"__content__"=>"160", "Units"=>"pixels"},
+    "Width"=>{"__content__"=>"160", "Units"=>"pixels"}},
+  "LargeImage"=>{
+    "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL.jpg",
+    "Height"=>{"__content__"=>"500", "Units"=>"pixels"},
+    "Width"=>{"__content__"=>"500", "Units"=>"pixels"}},
+  "ImageSets"=>{
+    "ImageSet"=>[{
+      "SwatchImage"=>{
+        "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL30_.jpg",
+        "Height"=>{"__content__"=>"30", "Units"=>"pixels"},
+        "Width"=>{"__content__"=>"30", "Units"=>"pixels"}},
+      "SmallImage"=>{
+        "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL75_.jpg",
+        "Height"=>{"__content__"=>"75", "Units"=>"pixels"},
+        "Width"=>{"__content__"=>"75", "Units"=>"pixels"}},
+      "ThumbnailImage"=>{
+        "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL75_.jpg",
+        "Height"=>{"__content__"=>"75", "Units"=>"pixels"},
+        "Width"=>{"__content__"=>"75", "Units"=>"pixels"}},
+      "TinyImage"=>{
+        "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL110_.jpg",
+        "Height"=>{"__content__"=>"110", "Units"=>"pixels"},
+        "Width"=>{"__content__"=>"110", "Units"=>"pixels"}},
+      "MediumImage"=>{
+        "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL160_.jpg",
+        "Height"=>{"__content__"=>"160", "Units"=>"pixels"},
+        "Width"=>{"__content__"=>"160", "Units"=>"pixels"}},
+      "LargeImage"=>{
+        "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL.jpg",
+        "Height"=>{"__content__"=>"500", "Units"=>"pixels"},
+        "Width"=>{"__content__"=>"500", "Units"=>"pixels"}},
+        "Category"=>"variant"}
+        ,
+      {"SwatchImage"=>{
+        "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL30_.jpg",
+        "Height"=>{"__content__"=>"30", "Units"=>"pixels"},
+        "Width"=>{"__content__"=>"30", "Units"=>"pixels"}},
+      "SmallImage"=>{
+        "URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL75_.jpg", "Height"=>{"__content__"=>"75", "Units"=>"pixels"}, "Width"=>{"__content__"=>"75", "Units"=>"pixels"}}, "ThumbnailImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL75_.jpg", "Height"=>{"__content__"=>"75", "Units"=>"pixels"}, "Width"=>{"__content__"=>"75", "Units"=>"pixels"}}, "TinyImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL110_.jpg", "Height"=>{"__content__"=>"110", "Units"=>"pixels"}, "Width"=>{"__content__"=>"110", "Units"=>"pixels"}}, "MediumImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL160_.jpg", "Height"=>{"__content__"=>"160", "Units"=>"pixels"}, "Width"=>{"__content__"=>"160", "Units"=>"pixels"}}, "LargeImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL.jpg", "Height"=>{"__content__"=>"500", "Units"=>"pixels"}, "Width"=>{"__content__"=>"500", "Units"=>"pixels"}}, "Category"=>"variant"}, {"SwatchImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL30_.jpg", "Height"=>{"__content__"=>"30", "Units"=>"pixels"}, "Width"=>{"__content__"=>"30", "Units"=>"pixels"}}, "SmallImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL75_.jpg", "Height"=>{"__content__"=>"75", "Units"=>"pixels"}, "Width"=>{"__content__"=>"75", "Units"=>"pixels"}}, "ThumbnailImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL75_.jpg", "Height"=>{"__content__"=>"75", "Units"=>"pixels"}, "Width"=>{"__content__"=>"75", "Units"=>"pixels"}}, "TinyImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL110_.jpg", "Height"=>{"__content__"=>"110", "Units"=>"pixels"}, "Width"=>{"__content__"=>"110", "Units"=>"pixels"}}, "MediumImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL160_.jpg", "Height"=>{"__content__"=>"160", "Units"=>"pixels"}, "Width"=>{"__content__"=>"160", "Units"=>"pixels"}}, "LargeImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL.jpg", "Height"=>{"__content__"=>"500", "Units"=>"pixels"}, "Width"=>{"__content__"=>"500", "Units"=>"pixels"}}, "Category"=>"variant"}, {"SwatchImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL30_.jpg", "Height"=>{"__content__"=>"30", "Units"=>"pixels"}, "Width"=>{"__content__"=>"30", "Units"=>"pixels"}}, "SmallImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL75_.jpg", "Height"=>{"__content__"=>"75", "Units"=>"pixels"}, "Width"=>{"__content__"=>"75", "Units"=>"pixels"}}, "ThumbnailImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL75_.jpg", "Height"=>{"__content__"=>"75", "Units"=>"pixels"}, "Width"=>{"__content__"=>"75", "Units"=>"pixels"}}, "TinyImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL110_.jpg", "Height"=>{"__content__"=>"110", "Units"=>"pixels"}, "Width"=>{"__content__"=>"110", "Units"=>"pixels"}}, "MediumImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL._SL160_.jpg", "Height"=>{"__content__"=>"160", "Units"=>"pixels"}, "Width"=>{"__content__"=>"160", "Units"=>"pixels"}}, "LargeImage"=>{"URL"=>"https://images-na.ssl-images-amazon.com/images/I/51L28eSCFJL.jpg", "Height"=>{"__content__"=>"500", "Units"=>"pixels"}, "Width"=>{"__content__"=>"500", "Units"=>"pixels"}}, "Category"=>"primary"}]},
+
+        "ItemAttributes"=>{
+          "Binding"=>"Kitchen",
+          "Brand"=>"3dRose",
+          "Color"=>"Red/White",
+          "EAN"=>"0190133806799",
+          "EANList"=>{"EANListElement"=>"0190133806799"},
+
+          "Feature"=>["White ceramic mug with red interior and handle", "Image printed on both sides", "Available in 11oz only", "Microwave safe, hand-wash to preserve image", "High gloss finish"],
+
+          "IsAdultProduct"=>"0",
+
+          "ItemDimensions"=>{"Height"=>{"__content__"=>"375", "Units"=>"hundredths-inches"}, "Length"=>{"__content__"=>"400", "Units"=>"hundredths-inches"}, "Weight"=>{"__content__"=>"76", "Units"=>"Hundredths Pounds"}, "Width"=>{"__content__"=>"300", "Units"=>"hundredths-inches"}},
+
+          "Label"=>"3dRose",
+          "ListPrice"=>{"Amount"=>"1296", "CurrencyCode"=>"USD", "FormattedPrice"=>"$12.96"},
+          "Manufacturer"=>"3dRose",
+          "Model"=>"mug_235574_5",
+          "MPN"=>"mug_235574_5",
+          "NumberOfItems"=>"1",
+
+          "PackageDimensions"=>{"Height"=>{"__content__"=>"421", "Units"=>"hundredths-inches"}, "Length"=>{"__content__"=>"610", "Units"=>"hundredths-inches"}, "Weight"=>{"__content__"=>"80", "Units"=>"Hundredths Pounds"}, "Width"=>{"__content__"=>"488", "Units"=>"hundredths-inches"}},
+
+          "PackageQuantity"=>"1",
+          "PartNumber"=>"mug_235574_5",
+          "ProductGroup"=>"Kitchen",
+          "ProductTypeName"=>"KITCHEN",
+          "Publisher"=>"3dRose",
+          "Size"=>"11 oz",
+          "Studio"=>"3dRose",
+          "Title"=>"3dRose mug_235574_5 \"For Fox Sake\" Two Tone Red Mug, 11 oz, Red/White",
+          "UPC"=>"190133806799",
+          "UPCList"=>{"UPCListElement"=>"190133806799"}},
+
+        "OfferSummary"=>{
+          "LowestNewPrice"=>{"Amount"=>"720", "CurrencyCode"=>"USD", "FormattedPrice"=>"$7.20"},
+          "LowestUsedPrice"=>{"Amount"=>"1004", "CurrencyCode"=>"USD", "FormattedPrice"=>"$10.04"},
+          "TotalNew"=>"2",
+          "TotalUsed"=>"1",
+          "TotalCollectible"=>"0",
+          "TotalRefurbished"=>"0"},
+
+        "Offers"=>{
+          "TotalOffers"=>"1",
+          "TotalOfferPages"=>"1",
+          "MoreOffersUrl"=>"https://www.amazon.com/gp/offer-listing/B01LWCWM4O?SubscriptionId=AKIAI4G46C52TJG5WRWA&tag=boozeandsnark-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01LWCWM4O",
+          "Offer"=>{
+            "OfferAttributes"=>{"Condition"=>"New"},
+            "OfferListing"=>{
+              "OfferListingId"=>"NAGetCc%2FbK1C%2FHWOdS2x%2BQ02oOmkntZjsqBELFpdMNCi4PZ3UeIJIIXfajCuRMP4IUx7NhkGVj5upPwCyKMnQUufBu4zb1%2FCnSAiZQCzC6Mzv%2B458meMZA%3D%3D",
+                "Price"=>{
+                  "Amount"=>"1296",
+                  "CurrencyCode"=>"USD",
+                  "FormattedPrice"=>"$12.96"},
+                "AvailabilityAttributes"=>{
+                  "AvailabilityType"=>"futureDate",
+                  "MinimumHours"=>"0",
+                  "MaximumHours"=>"0"},
+                "IsEligibleForSuperSaverShipping"=>"1",
+                "IsEligibleForPrime"=>"1"
+                }
+              }
+            }
+          }

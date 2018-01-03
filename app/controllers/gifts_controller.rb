@@ -1,4 +1,6 @@
 class GiftsController < ApplicationController
+  before_action :set_gift, only: [:show, :update]
+
   def index
     @gifts = Gift.search(params[:gift_search])
   end
@@ -16,7 +18,6 @@ class GiftsController < ApplicationController
   end
 
   def update
-    @gift = Gift.find_by(id: params[:id])
     if @gift.users.where(id: current_user.id).exists?
       flash[:notice] = " #{@gift.name}is already on your wishlist"
       redirect_to list_path(current_user.list)
@@ -27,12 +28,15 @@ class GiftsController < ApplicationController
   end
 
   def show
-    @gift = Gift.find_by(id: params[:id])
   end
 
   private
 
   def gift_params
     params.require(:gift).permit(:name, :price, :url, :image, :description, :gift_search, lists: [], categories_attributes: [:name])
+  end
+
+  def set_gift
+    @gift = Gift.find_by(id: params[:id])
   end
 end
