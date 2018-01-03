@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_gift, only: [:index, :new, :create]
+  before_action :set_review, only: [:show, :edit]
 
   def index
   end
@@ -23,7 +24,6 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find_by(id: params[:id])
   end
 
   private
@@ -34,5 +34,9 @@ class ReviewsController < ApplicationController
 
   def set_gift
     @gift = Gift.find_by(id: params[:gift_id])
+  end
+
+  def set_review
+    @review = Review.find_by(id: params[:id])
   end
 end
