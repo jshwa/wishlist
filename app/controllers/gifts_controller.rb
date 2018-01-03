@@ -1,6 +1,6 @@
 class GiftsController < ApplicationController
   def index
-    @gifts = Gift.all
+    @gifts = Gift.search(params[:gift_search])
   end
 
   def new
@@ -13,10 +13,6 @@ class GiftsController < ApplicationController
     gift.save
     gift.lists << current_user.list
     redirect_to list_path(current_user.list.id)
-  end
-
-  def edit
-
   end
 
   def update
@@ -36,6 +32,6 @@ class GiftsController < ApplicationController
   private
 
   def gift_params
-    params.require(:gift).permit(:name, :price, :url, :image, :description, lists: [], categories_attributes: [:name])
+    params.require(:gift).permit(:name, :price, :url, :image, :description, :gift_search, lists: [], categories_attributes: [:name])
   end
 end

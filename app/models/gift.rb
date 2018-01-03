@@ -15,6 +15,14 @@ class Gift < ApplicationRecord
     end
   end
 
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      self.all
+    end
+  end
+
   def self.generate_aws_request_url(params)
     # Set current timestamp if not set
     params["Timestamp"] = Time.now.gmtime.iso8601 if !params.key?("Timestamp")
