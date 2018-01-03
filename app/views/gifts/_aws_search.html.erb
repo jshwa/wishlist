@@ -3,9 +3,9 @@
 
 <% Gift.amazon_search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
   <div>
-    <%= new_gift = Gift.new_gift_from_amazon(item) %>
+    <% new_gift = Gift.new_gift_from_amazon(item) %>
     <%= image_tag new_gift.image %> <br>
-    <%= link_to new_gift.name, new_gift.url, target: "_blank" %> | <%= new_gift.price.to_formatted_price %><br>
+    <%= link_to new_gift.name, new_gift.url, target: "_blank" %> | <%= number_to_currency(new_gift.price) %><br>
     <ul>
       <% item["ItemAttributes"]["Feature"].each do |feature| %>
         <li><%= feature %></li>
