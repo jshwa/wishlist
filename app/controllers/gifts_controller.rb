@@ -11,19 +11,27 @@ class GiftsController < ApplicationController
   end
 
   def create
-    gift = Gift.new(gift_params)
-    gift.save
-    gift.lists.push(current_user.list)
-    redirect_to list_path(current_user.list)
+    if user_signed_in?
+      gift = Gift.new(gift_params)
+      gift.save
+      gift.lists.push(current_user.list)
+      redirect_to list_path(current_user.list)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def update
-    if @gift.users.where(id: current_user.id).exists?
-      flash[:notice] = " #{@gift.name} is already on your wishlist"
-      redirect_to list_path(current_user.list)
+    if user_signed_in?
+      if @gift.users.where(id: current_user.id).exists?
+        flash[:notice] = " #{@gift.name} is already on your wishlist"
+        redirect_to list_path(current_user.list)
+      else
+        @gift.lists.push current_user.list
+        redirect_to list_path(current_user.list)
+      end
     else
-      @gift.lists.push current_user.list
-      redirect_to list_path(current_user.list)
+      redirect_to new_user_session_path
     end
   end
 
