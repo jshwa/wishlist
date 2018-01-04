@@ -11,6 +11,8 @@
   <%= g.text_area :description %> <br><br>
 
 <h2>Pick a Category: </h2>
+  <%= g.collection_select :category_ids, Category.all, :id, :name, prompt: true %><br><br>
+  <strong>Or add your own</strong> <br><br>
   <%= g.fields_for :categories do |cat| %>
     <%= cat.label :name %>
     <%= cat.text_field :name %>

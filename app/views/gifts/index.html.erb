@@ -7,6 +7,8 @@
   <h2>From Amazon: </h2>
   <%= render partial: 'gifts/aws_search', locals: {item: params[:gift_search]} %>
 
+  <h2>Can't find what you're looking for? <%= link_to "Add your own gift", new_gift_path %></h2>
+
 <% else %>
   <h1>Browse Gifts: </h1>
   <%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>
