@@ -1,5 +1,5 @@
 class GiftsController < ApplicationController
-  before_action :set_gift, only: [:show, :update]
+  before_action :set_gift, only: [:show, :update, :destroy]
 
   def index
     @gifts = Gift.search(params[:gift_search])
@@ -28,6 +28,15 @@ class GiftsController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    if @gift.users.include?(current_user)
+      @gift.lists.delete(current_user.list)
+      redirect_to list_path(current_user.list)
+    else
+      redirect_to gift_path(@gift)
+    end
   end
 
   private

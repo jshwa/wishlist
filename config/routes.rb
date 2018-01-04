@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "lists#index"
   resources :lists, only: [:index, :edit, :show]
   resources :categories
-  resources :gifts, only: [:index, :show, :new, :create, :update] do
+  resources :gifts, only: [:index, :show, :new, :create, :update, :destroy] do
     resources :reviews
   end
 end
