@@ -1,0 +1,9 @@
+<h1>Choose a username:</h1>
+
+<%= form_for(@user, url: user_path(@user), html: { method: :put }) do |f| %>
+  <div class="field">
+    <%= f.text_field :username %>
+    <%= f.submit %>
+  </div>
+
+<% end %>
