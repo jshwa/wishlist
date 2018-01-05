@@ -1,4 +1,7 @@
-
+body {
+  margin: 0;
+  padding: 0;
+}
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
@@ -7,6 +10,7 @@
     "header header header"
     ". main .";
 }
+
 .header{
   grid-area: header;
   display: grid;
@@ -25,8 +29,37 @@
   padding: 0;
 }
 
+.nav h1 {
+  color: white;
+  display: inline-block;
+  float: left;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: .25em;
+  padding: 0;
+}
+
 .nav li {
   display: inline-block;
+  float: left;
+  margin-top: 1em;
+  color: white;
+}
+
+.nav li a{
+  color: white;
+  text-decoration: none;
+  margin: 1em;
+  padding: 1em;
+}
+
+.nav li a:hover {
+  background-color: #135fd8;
+}
+
+.nav li.welcome {
+  float:right;
+  margin-right: 2em;
 }
 
 .search {
