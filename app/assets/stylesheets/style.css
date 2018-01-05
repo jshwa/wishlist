@@ -103,7 +103,7 @@ body {
   list-style: none;
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(auto, 250px));
-  grid-template-rows: auto;
+  grid-template-rows: repeat(auto-fit, 400px);
   grid-gap: 1em;
 }
 
@@ -112,4 +112,11 @@ body {
   border:1px solid #0F2041;
   border-radius: 5px;
   padding: 1em;
+}
+
+.gift_list li img {
+  display: block;
+  margin: auto;
+  max-width:100%;
+  max-height:100%;
 }

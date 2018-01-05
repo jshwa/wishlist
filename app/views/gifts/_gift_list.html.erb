@@ -1,10 +1,8 @@
-<div class="gift_list_container">
+
 <ul class="gift_list">
   <% gifts.each do |gift| %>
     <li><%= image_tag gift.image %>
-        <%= link_to gift.name, gift_path(gift) %>
-        <%= render partial: 'gifts/add_to_wishlist', locals: {gift: gift} %></li>
-
+        <h3><%= link_to gift.name, gift_path(gift) %></h3>
+        <p><%= render partial: 'gifts/add_to_wishlist', locals: {gift: gift} %><p></li>
   <% end %>
 </ul>
-</div>
