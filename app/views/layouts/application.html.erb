@@ -7,12 +7,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= render 'layouts/header' %> <br>
-    <%= render 'gifts/aws_search_form' unless current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="wrapper">
+      <header class="header">
+          <%= render 'layouts/header' %>
+        <div class="search">
+          <%= render 'gifts/aws_search_form' unless current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
+        </div>
+      </header>
+
+
+      <div class="main">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

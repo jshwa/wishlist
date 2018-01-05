@@ -1,0 +1,48 @@
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 80px auto;
+  grid-template-areas:
+    "header header header"
+    ". main .";
+}
+.header{
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 50px 30px;
+  grid-template-areas:
+    "nav nav nav"
+    ". search ."
+}
+
+.nav {
+  grid-area: nav;
+  background: #0F2041;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.search {
+  grid-area: search;
+  align-self: center;
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      ". wishlists ."
+      ". gifts_list .";
+  }
+}
