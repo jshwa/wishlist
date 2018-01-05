@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    if current_user.wrote_review?s(@gift)
+    if current_user.wrote_review?(@gift)
       redirect_to edit_gift_review_path(@gift, review)
     else
       review = @gift.reviews.build(review_params)

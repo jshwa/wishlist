@@ -129,8 +129,7 @@ body {
   text-align: center;
 }
 
-.gift_list .button_to input,
-.gift_list .edit_gift input {
+.card_button {
   width: 200px;
   background: #0F2041;
   color: white;
