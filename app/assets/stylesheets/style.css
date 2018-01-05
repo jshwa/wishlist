@@ -97,13 +97,19 @@ body {
 
 .main {
   grid-area: main;
-  display: grid;
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      ". wishlists ."
-      ". gifts_list .";
-  }
+}
+
+.gift_list {
+  list-style: none;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 250px));
+  grid-template-rows: auto;
+  grid-gap: 1em;
+}
+
+.gift_list li {
+  display: inline-block;
+  border:1px solid #0F2041;
+  border-radius: 5px;
+  padding: 1em;
 }
