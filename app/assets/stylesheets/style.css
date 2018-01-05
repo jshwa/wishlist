@@ -122,7 +122,8 @@ body {
   max-height:100%;
 }
 
-.gift_list .button_to input {
+.gift_list .button_to input,
+.gift_list .edit_gift input {
   width: 200px;
   background: #0F2041;
   color: white;
@@ -132,4 +133,8 @@ body {
   position: absolute;
   bottom: 1.5em;
   font-size: 12px;
+}
+
+.gift_list .edit_gift input {
+  background: #135fd8;
 }
