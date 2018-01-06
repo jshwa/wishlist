@@ -1,12 +1,14 @@
 <h1>Reviews for: <%= @gift.name %> </h1>
 
-<div class="review_list">
+<%= content_tag :div, class: "review_list" do %>
   <% @gift.reviews.each do |review| %>
-    <strong><%= review.user.username %></strong> on <%= review.created_at.strftime("%b %d, %Y") %> <br>
-    <p>Stars: <%= review.stars %> <br><br>
-    Review: <%= review.comment %> </p>
-    <%= button_to "Edit Review", edit_gift_review_path(@gift, review), method: 'get', class: "edit_button" if current_user.wrote_review?(@gift) %>
+    <%= content_tag :div, class: "review_item" do %>
+      <strong><%= review.user.username %></strong> on <%= review.created_at.strftime("%b %d, %Y") %> <br>
+      <p>Stars: <%= review.stars %> <br><br>
+      Review: <%= review.comment %> </p>
+      <%= button_to "Edit Review", edit_gift_review_path(@gift, review), method: 'get', class: "edit_button" if current_user.wrote_review?(@gift) %>
+    <% end %>
   <% end %>
-</div>
+<% end %>
 
 <%= link_to "Write a review", new_gift_review_path(@gift) if !current_user.wrote_review?(@gift) %>
