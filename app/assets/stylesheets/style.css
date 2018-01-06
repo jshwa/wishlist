@@ -148,7 +148,7 @@ body {
   background: #135fd8;
 }
 
-.review_item{
+.review_item {
   border: 1px solid #0F2041;
   border-radius: 5px;
   background: white;
@@ -156,12 +156,14 @@ body {
   padding: 1em;
 }
 
-.review_list .edit_button {
-  width: 150px;
+.edit_button {
+  display: block;
+  width: 97%;
   background: #0F2041;
   color: white;
-  padding: 0.5rem;
+  margin: 1em;
+  padding: 1em;
   border: none;
-  border-radius: 1rem;
+  border-radius: 5px;
   font-size: 12px;
 }

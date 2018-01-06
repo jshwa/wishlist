@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    review = current_user.wrote_review?(@gift)
+    review = current_user.wrote_a_review?(@gift)
     if review
       redirect_to edit_gift_review_path(@gift, review)
     else
@@ -15,11 +15,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = current_user.wrote_review?(@gift)
+    review = current_user.wrote_a_review?(@gift)
     if review
       redirect_to edit_gift_review_path(@gift, review)
     else
-      review = @gift.reviews.build(gift_id: params[:gift_id])
+      review = @gift.reviews.build(review_params)
       review.user = current_user
       if review.save
         redirect_to gift_review_path(@gift, review)

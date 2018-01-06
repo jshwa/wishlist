@@ -42,8 +42,9 @@ class User < ApplicationRecord
     name.split(" ").first + num.rand(100000..999999).to_s
   end
 
-  def wrote_review?(gift)
-    review = gift.reviews.where(user: self).pluck(:id)
+  def wrote_a_review?(gift)
+    id = gift.reviews.where(user: self).pluck(:id)
+    review = Review.find_by(id: id)
     review == [] ? false : review
   end
 end
