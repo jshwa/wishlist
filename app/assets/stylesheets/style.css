@@ -144,3 +144,17 @@ body {
 .gift_list .edit_gift input {
   background: #135fd8;
 }
+
+.review_list {
+  border-bottom: 1px solid black;
+}
+
+.review_list .edit_button {
+  width: 150px;
+  background: #0F2041;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 12px;
+}
