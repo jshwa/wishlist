@@ -1,4 +1,4 @@
-<%= form_for review, url: gift_reviews_path(review.gift) do |r| %>
+<%= form_for review, url: gift_review_path(review.gift) do |r| %>
 <%= r.label :Star_rating %>
 <%= r.radio_button :stars, 1 %><%= r.radio_button :stars, 2 %><%= r.radio_button :stars, 3 %><%= r.radio_button :stars, 4 %><%= r.radio_button :stars, 5 %> <br><br>
 <%= r.label "What did you think of this gift?" %>

@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_gift, only: [:index, :new, :create]
-  before_action :set_review, only: [:show, :edit]
+  before_action :set_review, only: [:show, :edit, :update]
 
   def index
   end
@@ -31,6 +31,18 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    if @review.user != current_user
+      redirect_to gift_reviews_path(@review.gift)
+    end
+  end
+
+  def update
+    if @review.user != current_user
+      redirect_to gift_reviews_path(@review.gift)
+    else
+      @review.update(review_params)
+      redirect_to gift_review_path(@review)
+    end
   end
 
   def show
