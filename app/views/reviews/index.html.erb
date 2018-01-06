@@ -9,5 +9,5 @@
     <%= render partial: 'reviews/review_item', locals: {review: review} %>
   <% end %>
 
-  <%= button_to "Write a review", new_gift_review_path(@gift), method: 'get', class:'edit_button' if !current_user.wrote_a_review?(@gift) %>
+  <%= button_to "Write a review", new_gift_review_path(@gift), method: 'get', class:'big_btn' if !current_user.wrote_a_review?(@gift) %>
 <% end %>

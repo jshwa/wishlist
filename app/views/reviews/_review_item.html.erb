@@ -2,5 +2,5 @@
   <strong><%= review.user.username %></strong> on <%= review.created_at.strftime("%b %d, %Y") %> <br>
   <p>Stars: <%= review.stars %> <br><br>
   Review: <%= review.comment %> </p>
-  <%= button_to "Edit Review", edit_gift_review_path(review.gift, review), method: 'get', class: "edit_button" if review.user == current_user %>
+  <%= button_to "Edit Review", edit_gift_review_path(review.gift, review), method: 'get', class: "big_btn" if review.user == current_user %>
 <% end %>

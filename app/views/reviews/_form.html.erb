@@ -1,7 +1,9 @@
-<%= form_for review, url: gift_review_path(review.gift) do |r| %>
-<%= r.label :Star_rating %>
-<%= r.radio_button :stars, 1 %><%= r.radio_button :stars, 2 %><%= r.radio_button :stars, 3 %><%= r.radio_button :stars, 4 %><%= r.radio_button :stars, 5 %> <br><br>
-<%= r.label "What did you think of this gift?" %>
-<%= r.text_area :comment %>
-<%= r.submit %>
+<%= content_tag :div, class:"form" do %>
+  <%= form_for [review.gift, review] do |r| %>
+    <%= r.label "Rate the Product" %>
+    <%= r.radio_button :stars, 1 %><%= r.radio_button :stars, 2 %><%= r.radio_button :stars, 3 %><%= r.radio_button :stars, 4 %><%= r.radio_button :stars, 5 %> <br><br>
+    <p><%= r.label "Tell us what you thought of this gift:" %></p>
+    <%= r.text_area :comment %> <br><br>
+    <%= r.submit class:"big_btn" %>
+  <% end %>
 <% end %>
