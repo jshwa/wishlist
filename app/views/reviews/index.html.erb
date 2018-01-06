@@ -6,12 +6,7 @@
   <% end %>
 
   <% @gift.reviews.each do |review| %>
-    <%= content_tag :div, class: "review_item" do %>
-      <strong><%= review.user.username %></strong> on <%= review.created_at.strftime("%b %d, %Y") %> <br>
-      <p>Stars: <%= review.stars %> <br><br>
-      Review: <%= review.comment %> </p>
-      <%= button_to "Edit Review", edit_gift_review_path(@gift, review), method: 'get', class: "edit_button" if review.user == current_user %>
-    <% end %>
+    <%= render partial: 'reviews/review_item', locals: {review: review} %>
   <% end %>
 
   <%= button_to "Write a review", new_gift_review_path(@gift), method: 'get', class:'edit_button' if !current_user.wrote_a_review?(@gift) %>
