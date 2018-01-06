@@ -4,6 +4,6 @@
   <% @list.gifts.each do |gift| %>
     <li><%= image_tag gift.image %>
       <h3><%= link_to gift.name, gift_path(gift) %></h3>
-          <%= button_to "Reviews", gift_reviews_path(gift), class:'card_button' %>
+          <%= button_to "Reviews", gift_reviews_path(gift), method: 'get', class:'card_button' %>
 <% end %>
 </ul>
