@@ -24,6 +24,8 @@ body {
     ". search ."
 }
 
+/**** nav  ****/
+
 .nav {
   font-family: arial;
   grid-area: nav;
@@ -67,6 +69,8 @@ body {
   margin-right: 2em;
 }
 
+/**** search bar  ****/
+
 .search {
   grid-area: search;
   align-self: center;
@@ -102,6 +106,8 @@ body {
 .main {
   grid-area: main;
 }
+
+/**** gifts  ****/
 
 .gift_list {
   list-style: none;
@@ -150,6 +156,8 @@ body {
   background: #135fd8;
 }
 
+/**** reviews  ****/
+
 .review_item {
   border: 1px solid #0F2041;
   border-radius: 5px;
@@ -188,7 +196,12 @@ body {
   border-radius: 5px;
 }
 
-/* star rating */
+p.rating {
+  content: "\f005";
+}
+
+/**** star rating  ****/
+
 .rating { float:left;}
 .rating input {display: none;}
 .rating label:before {
@@ -214,3 +227,7 @@ body {
 .rating input:checked ~ label:hover,
 .rating label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+p.rating i {
+  color: #FFD700;
+}
