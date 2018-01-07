@@ -1,10 +1,12 @@
 
-  <ul class="nav">
-    <h1>Wishlist!</h1>
-    <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "My Wishlist", list_path(current_user.list) if user_signed_in? %></li>
-    <li><%= link_to "Sign In", new_user_session_path if !user_signed_in? %></li>
-    <li><%= link_to "Sign Up", new_user_registration_path if !user_signed_in? %></li>
-    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete if user_signed_in?%></li>
-    <li class="welcome"><%= "Welcome #{current_user.username}" if user_signed_in? %></li>
-  </ul>
+  <div class="top_bar">
+    <div class="logo">
+      <h1><%= link_to "Wishlist!", root_path %></h1>
+    </div>
+    <div class="search">
+      <%= render 'gifts/aws_search_form' unless current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
+    </div>
+    <div class="welcome">
+      <%= "Welcome #{current_user.username}" if user_signed_in? %>
+    </div>
+  </div>

@@ -11,11 +11,7 @@
     <div class="wrapper">
       <header class="header">
           <%= render 'layouts/header' %>
-        <div class="search">
-          <%= render 'gifts/aws_search_form' unless current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
-        </div>
       </header>
-
 
       <div class="main">
         <% if notice || alert %>
