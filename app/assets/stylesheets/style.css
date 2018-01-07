@@ -165,6 +165,24 @@ ul.nav li:first-child {
   width: 100%;
 }
 
+/**** wishlists ****/
+
+.wishlists {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  font-size: 0;
+}
+
+.wishlists li img,
+.wishlists li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin: 2px auto;
+  font-size: 16px;
+}
+
 
 /**** gifts  ****/
 

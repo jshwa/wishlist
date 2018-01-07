@@ -34,6 +34,7 @@ class User < ApplicationRecord
       user.username = make_random_username(auth.info.name)
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
+      user.image = auth.info.image
     end
   end
 

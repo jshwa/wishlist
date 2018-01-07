@@ -9,6 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :encrypted_password, null: false, default: ""
       t.boolean :searchable
       t.text :bio
+      t.string :image
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
