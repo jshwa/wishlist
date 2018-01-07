@@ -3,6 +3,13 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update]
 
   def index
+    if params[:user_id]
+      @user = User.find_by(id: params[:user_id])
+      @reviews = @user.reviews
+    else
+      @gift = Gift.find_by(id: params[:gift_id])
+      @reviews= @gift.reviews
+    end
   end
 
   def new

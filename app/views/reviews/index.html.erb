@@ -1,13 +1,18 @@
-<h1>Reviews for: <%= @gift.name %> </h1>
+<h1><%= @gift ? "Reviews for: #{@gift.name}" : "Reviews by #{@user.username.humanize}" %></h1>
 
 <%= content_tag :div, class: "review_list" do %>
-  <%= content_tag :div, class: "review_item" do %>
-    <%= "No reviews here. Be the first to write one!" if @gift.reviews.length == 0 %>
-  <% end %>
-
-  <% @gift.reviews.each do |review| %>
+  <% @reviews.each do |review| %>
     <%= render partial: 'reviews/review_item', locals: {review: review} %>
   <% end %>
+<% end %>
 
-  <%= button_to "Write a review", new_gift_review_path(@gift), method: 'get', class:'big_btn' if !current_user.wrote_a_review?(@gift) %>
+<% if @reviews.length == 0 %>
+  <%= content_tag :div, class: "review_item" do %>
+    <% if @gift %>
+     <strong><%= "#{@gift.name} doesn't have any reviews. Be the first to write one!" %></strong>
+     <%= button_to "Write a review", new_gift_review_path(@gift), method: 'get', class:'big_btn' %>
+    <% else %>
+      <strong><%= "#{@user.username.humanize} hasn't written any reviews." %></strong>
+    <% end %>
+  <% end %>
 <% end %>
