@@ -5,14 +5,6 @@ body {
   padding: 0;
   background: #F7F7F7;
 }
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "header header header"
-    ". main .";
-}
 
 .header{
   grid-area: header;
@@ -28,11 +20,13 @@ body {
 
 .top_bar {
   grid-area: top_bar;
+  position: fixed;
+  z-index: 100;
   font-family: arial;
   background: #0F2041;
   box-shadow: 0px 1px 3px #0F2041;
   margin: 0;
-  padding: 0;
+  padding: 5px;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -76,7 +70,7 @@ body {
 .search button.search_btn {
   position: absolute;
   width: 4em;
-  height: 3.25em;
+  height: 3.35em;
   border-radius: 5px;
   background: #135fd8;
   border: 1px solid #0F2041;
@@ -91,6 +85,7 @@ body {
   grid-area: welcome;
   color: white;
   margin-top: .25em;
+  justify-self: end;
 }
 
 /**** nav  ****/
@@ -132,14 +127,24 @@ body {
 
 
 
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". main .";
+}
+
 .main {
   grid-area: main;
+  width: 100%;
 }
 
 /**** gifts  ****/
 
 .gift_list {
   list-style: none;
+  margin: 0;
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(auto, 250px));
   grid-template-rows: repeat(auto-fit, 400px);

@@ -8,11 +8,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div class="wrapper">
       <header class="header">
           <%= render 'layouts/header' %>
       </header>
 
+    <div class="wrapper">
       <div class="main">
         <% if notice || alert %>
           <p class="notice"><%= notice %></p>
