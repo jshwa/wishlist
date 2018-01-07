@@ -131,6 +131,27 @@ ul.nav li:first-child {
   box-shadow: 0px 0 3px 0 #99ccff;
 }
 
+/**** Welcome ****/
+
+.intro_container {
+  height: 70vh;
+  max-height: 600px;
+  background: url("dandelion.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  text-align: center;
+}
+
+/**** main ****/
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
@@ -143,6 +164,7 @@ ul.nav li:first-child {
   grid-area: main;
   width: 100%;
 }
+
 
 /**** gifts  ****/
 
@@ -158,7 +180,6 @@ ul.nav li:first-child {
 .gift_list li {
   display: inline-block;
   background: white;
-  border:1px solid #0F2041;
   border-radius: 5px;
   padding: 1.5em;
   position: relative;
@@ -180,7 +201,7 @@ ul.nav li:first-child {
 
 .card_button {
   width: 200px;
-  background: #0F2041;
+  background: #3366ff;
   color: white;
   padding: 0.5rem;
   border: none;

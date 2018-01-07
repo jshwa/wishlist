@@ -1,9 +1,9 @@
 <h1>Wishlists</h1>
 
 <ul class="wishlists">
-<% @lists.each do |list| %>
-  <li><%= link_to list.user.username, list_path(list) if list.user != current_user %></li>
-<% end %>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.user.username, list_path(list) if list.user != current_user %></li>
+  <% end %>
 </ul>
 
 <h1>Or Browse Gifts</h1>
