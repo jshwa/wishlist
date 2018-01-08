@@ -260,14 +260,38 @@ ul.nav li:first-child {
 
 .image_and_button {
   width: 50%;
+  padding: 2em;
 }
 
-.gift_info {
+.image_and_button img {
+  margin: 0 30px;
+}
 
+.image_and_button .item_button {
+  margin: 0 10px;
 }
 
 .category_button {
-  
+  text-indent:0px;
+  border:1px solid #3366ff;
+  display:inline-block;
+  color:#111111;
+  font-size:14px;
+  font-weight:normal;
+  font-style:normal;
+  font-family: arial;
+  height:25px;
+  line-height:25px;
+  width:auto;
+  padding: 0 1em;
+  text-decoration:none;
+  text-align:center;
+}
+
+.category_button:hover {
+  border: 1px solid #0F2041;
+  background: #0F2041;
+  color: white;
 }
 
 /**** reviews  ****/
