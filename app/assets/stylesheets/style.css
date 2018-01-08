@@ -216,14 +216,14 @@ ul.nav li:first-child {
   max-height:100%;
 }
 
-.gift_list h3 a {
+.gift_list h4 a {
   display: block;
   text-decoration: none;
   color: #0F2041;
   text-align: center;
 }
 
-.card_button {
+.card_button, .card_button_added {
   width: 200px;
   background: #3366ff;
   color: white;
@@ -233,6 +233,10 @@ ul.nav li:first-child {
   position: absolute;
   bottom: 1.5em;
   font-size: 12px;
+}
+
+.card_button_added {
+  background: #0F2041;
 }
 
 .gift_list .edit_gift input {

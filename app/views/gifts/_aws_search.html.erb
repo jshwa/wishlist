@@ -9,7 +9,9 @@
         <br><br>
 
 <% #add to wishlist button %>
-      <% unless new_gift.persisted? %>
+      <% if new_gift.persisted? %>
+        <%= button_to "On Your Wishlist", list_path(current_user.list), method: 'get', class: 'card_button_added'%>
+      <% else %>
         <%= form_for new_gift, url: gifts_path, html: {method: "post"} do |g|%>
           <%= g.hidden_field :name %>
           <%= g.hidden_field :price%>
