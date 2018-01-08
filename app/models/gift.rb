@@ -78,7 +78,14 @@ class Gift < ApplicationRecord
 
       new_gift.name = item["ItemAttributes"]["Title"]
       new_gift.url = item["DetailPageURL"]
-      new_gift.price = item["OfferSummary"]["LowestNewPrice"]["Amount"].to_f/100 if item["OfferSummary"]
+
+      if item["OfferSummary"]["LowestNewPrice"]
+        new_gift.price = item["OfferSummary"]["LowestNewPrice"]["Amount"].to_f/100
+      elsif item["OfferSummary"]["LowestUsedPrice"]
+        new_gift.price = item["OfferSummary"]["LowestUsedPrice"]["Amount"].to_f/100
+      else
+        new_gift.price = 0;
+      end
 
       if item["ItemAttributes"]["Feature"].is_a?(Array)
         new_gift.description = item["ItemAttributes"]["Feature"].join(" ")
