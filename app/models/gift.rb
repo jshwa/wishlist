@@ -61,31 +61,39 @@ class Gift < ApplicationRecord
   end
 
   def self.new_gift_from_amazon(item)
-    new_gift = self.where(url: item["DetailPageURL"]).first_or_initialize
-
-    if item["MediumImage"]
-      new_gift.image = item["MediumImage"]["URL"]
-    elsif item["ImageSets"]["ImageSet"][0]
-      new_gift.image = item["ImageSets"]["ImageSet"][0]["MediumImage"]["URL"]
-    elsif item["ImageSets"]["ImageSet"]
-      new_gift.image = item["ImageSets"]["ImageSet"]["MediumImage"]["URL"]
+    if item.is_a?(Array)
+      unknown_gift
     else
-      new_gift.image = ""
+      new_gift = where(url: item["DetailPageURL"]).first_or_initialize
+
+      if item["MediumImage"]
+        new_gift.image = item["MediumImage"]["URL"]
+      elsif item["ImageSets"]["ImageSet"][0]
+        new_gift.image = item["ImageSets"]["ImageSet"][0]["MediumImage"]["URL"]
+      elsif item["ImageSets"]["ImageSet"]
+        new_gift.image = item["ImageSets"]["ImageSet"]["MediumImage"]["URL"]
+      else
+        new_gift.image = ""
+      end
+
+      new_gift.name = item["ItemAttributes"]["Title"]
+      new_gift.url = item["DetailPageURL"]
+      new_gift.price = item["OfferSummary"]["LowestNewPrice"]["Amount"].to_f/100 if item["OfferSummary"]
+
+      if item["ItemAttributes"]["Feature"].is_a?(Array)
+        new_gift.description = item["ItemAttributes"]["Feature"].join(" ")
+      elsif item["ItemAttributes"]["Feature"]
+        new_gift.description = item["ItemAttributes"]["Feature"]
+      else
+        new_gift.description = "No description"
+      end
+
+      new_gift
     end
+  end
 
-    new_gift.name = item["ItemAttributes"]["Title"]
-    new_gift.url = item["DetailPageURL"]
-    new_gift.price = item["OfferSummary"]["LowestNewPrice"]["Amount"].to_f/100 if item["OfferSummary"]["LowestNewPrice"]
-
-    if item["ItemAttributes"]["Feature"].is_a?(Array)
-      new_gift.description = item["ItemAttributes"]["Feature"].join(" ")
-    elsif item["ItemAttributes"]["Feature"]
-      new_gift.description = item["ItemAttributes"]["Feature"]
-    else
-      new_gift.description = "No description"
-    end
-
-    new_gift
+  def self.unknown_gift
+    new_gift = nil
   end
 
 end
