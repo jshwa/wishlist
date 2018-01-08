@@ -1,4 +1,4 @@
-<h1><%= @gift ? "Reviews for: #{@gift.name}" : "Reviews by #{@user.username.humanize}" %></h1>
+<h1><%= @reviews.review_index_title(@gift, @user) %></h1>
 
 <%= content_tag :div, class: "review_list" do %>
   <% @reviews.each do |review| %>

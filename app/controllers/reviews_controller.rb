@@ -5,10 +5,12 @@ class ReviewsController < ApplicationController
   def index
     if params[:user_id]
       @user = User.find_by(id: params[:user_id])
-      @reviews = @user.reviews
+      @gift = nil
+      @reviews = @user.reviews.decorate
     else
       @gift = Gift.find_by(id: params[:gift_id])
-      @reviews= @gift.reviews
+      @user = nil
+      @reviews= @gift.reviews.decorate
     end
   end
 
