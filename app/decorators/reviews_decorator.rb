@@ -8,8 +8,8 @@ class ReviewsDecorator < Draper::CollectionDecorator
     if object.length == 0
       h.content_tag :div, class: "review_item" do
         if gift
-          concat "<strong> #{gift.name} doesn't have any reviews. Be the first to write one! </strong>"
-          concat h.button_to "Write a review", new_gift_review_path(gift), method: 'get', class:'big_btn'
+          h.concat h.content_tag :strong, "#{gift.name} doesn't have any reviews. Be the first to write one!"
+          h.concat h.button_to "Write a review", h.new_gift_review_path(gift), method:'get', class:'big_btn'
         else
           "<strong> #{user.username.humanize} hasn't written any reviews.</strong>"
         end.html_safe
