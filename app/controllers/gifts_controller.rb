@@ -1,5 +1,5 @@
 class GiftsController < ApplicationController
-  before_action :set_gift, only: [:show, :update, :destroy]
+  before_action :set_gift, only: [:update, :destroy]
 
   def index
     @gifts = Gift.search(params[:gift_search])
@@ -36,6 +36,7 @@ class GiftsController < ApplicationController
   end
 
   def show
+    @gift = Gift.find_by(id: params[:id]).decorate
   end
 
   def destroy

@@ -239,9 +239,19 @@ ul.nav li:first-child {
   background: #135fd8;
 }
 
+.item_button {
+  width: 200px;
+  background: #3366ff;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 12px;
+}
+
 /**** reviews  ****/
 
-.review_item {
+.review_item, .gift_item {
   border: 1px solid #0F2041;
   border-radius: 5px;
   background: white;
