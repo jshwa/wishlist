@@ -248,10 +248,31 @@ ul.nav li:first-child {
   border-radius: 1rem;
   font-size: 12px;
 }
+.gift_item {
+  border: 1px solid #0F2041;
+  border-radius: 5px;
+  background: white;
+  margin: 1em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.image_and_button {
+  width: 50%;
+}
+
+.gift_info {
+
+}
+
+.category_button {
+  
+}
 
 /**** reviews  ****/
 
-.review_item, .gift_item {
+.review_item {
   border: 1px solid #0F2041;
   border-radius: 5px;
   background: white;
@@ -323,4 +344,50 @@ p.rating {
 
 p.rating i {
   color: #FFD700;
+}
+
+/**** AMAZON button ****/
+.amazon_button {
+  -moz-box-shadow:inset 0px 1px 0px 0px #f9eacf;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #f9eacf;
+  box-shadow:inset 0px 1px 0px 0px #f9eacf;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F6DD9F), color-stop(1, #F0C24D) );
+  background:-moz-linear-gradient( center top, #F6DD9F 5%, #F0C24D 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=’#F6DD9F‘, endColorstr=’#F0C24D‘);
+  background-color:#f5d78a;
+  -webkit-border-top-left-radius:6px;
+  -moz-border-radius-topleft:6px;
+  border-top-left-radius:6px;
+  -webkit-border-top-right-radius:6px;
+  -moz-border-radius-topright:6px;
+  border-top-right-radius:6px;
+  -webkit-border-bottom-right-radius:6px;
+  -moz-border-radius-bottomright:6px;
+  border-bottom-right-radius:6px;
+  -webkit-border-bottom-left-radius:6px;
+  -moz-border-radius-bottomleft:6px;
+  border-bottom-left-radius:6px;
+  text-indent:0px;
+  border:1px solid #cbaa5c;
+  display:inline-block;
+  color:#111111;
+  font-size:14px;
+  font-weight:normal;
+  font-style:normal;
+  font-family: arial;
+  height:25px;
+  line-height:25px;
+  width:150px;
+  text-decoration:none;
+  text-align:center;
+}
+.amazonbutton:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F5D589), color-stop(1, #EEBA35) );
+  background:-moz-linear-gradient( center top, #F5D589 5%, #EEBA35 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=’#F5D589′, endColorstr=’#EEBA35′);
+  background-color:#eeba35;
+}
+.amazonbutton:active {
+  position:relative;
+  top:1px;
 }
