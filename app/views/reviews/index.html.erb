@@ -6,13 +6,4 @@
   <% end %>
 <% end %>
 
-<% if @reviews.length == 0 %>
-  <%= content_tag :div, class: "review_item" do %>
-    <% if @gift %>
-     <strong><%= "#{@gift.name} doesn't have any reviews. Be the first to write one!" %></strong>
-     <%= button_to "Write a review", new_gift_review_path(@gift), method: 'get', class:'big_btn' %>
-    <% else %>
-      <strong><%= "#{@user.username.humanize} hasn't written any reviews." %></strong>
-    <% end %>
-  <% end %>
-<% end %>
+<%= @reviews.no_reviews(@gift, @user) %>
