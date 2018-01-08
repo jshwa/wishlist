@@ -183,6 +183,11 @@ ul.nav li:first-child {
   font-size: 16px;
 }
 
+.wishlists li img {
+  height: 50px;
+  width: 50px;
+}
+
 
 /**** gifts  ****/
 
