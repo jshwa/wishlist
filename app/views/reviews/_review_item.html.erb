@@ -1,5 +1,5 @@
 <%= content_tag :div, class: "review_item" do %>
-  <strong><%= review.user.username %></strong> on <%= review.created_at.strftime("%b %d, %Y") %> <br>
+  <strong><%= review.user.username %></strong> on <%= formatted_updated_at review %> <br>
   <p class="rating">Rating: <%= review.display_rating %></p> <br><br>
   <p> Review: <%= review.comment %> </p>
   <%= button_to "Edit Review", edit_gift_review_path(review.gift, review), method: 'get', class: "big_btn" if review.user == current_user %>
