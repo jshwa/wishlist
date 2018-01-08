@@ -1,28 +1,29 @@
+<%= tag.div class:"gift_list" do %>
+  <% Gift.amazon_search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
+    <%= tag.li do %>
+      <% unless item.is_a?(Array) %>
+        <% new_gift = Gift.new_gift_from_amazon(item) %>
+        <%= image_tag new_gift.image %> <br>
+        <%= link_to shorten_name(new_gift.name), new_gift.url, target: "_blank" %> | <%= number_to_currency(new_gift.price) %><br>
+        <% new_gift.categories.build(name: item["ItemAttributes"]["Binding"]) %>
+        <br><br>
 
-<% Gift.amazon_search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
-  <div>
-    <% unless item.is_a?(Array) %>
-    <% new_gift = Gift.new_gift_from_amazon(item) %>
-    <%= image_tag new_gift.image %> <br>
-    <%= link_to new_gift.name, new_gift.url, target: "_blank" %> | <%= number_to_currency(new_gift.price) %><br>
-    <%= new_gift.description %>
-    <% new_gift.categories.build(name: item["ItemAttributes"]["Binding"]) %>
-    <br><br>
-
-    <% unless new_gift.persisted? %>
-      <%= form_for new_gift, url: gifts_path, html: {method: "post"} do |g|%>
-      <%= g.hidden_field :name %>
-      <%= g.hidden_field :price%>
-      <%= g.hidden_field :url %>
-      <%= g.hidden_field :image %>
-      <%= g.hidden_field :description %>
-      <%= g.fields_for :categories do |cat| %>
-        <%= cat.hidden_field :name %>
-      <% end %>
-      <%= g.submit "Add to Wishlist" %>
-      <% end %>
+<% #add to wishlist button %>
+      <% unless new_gift.persisted? %>
+        <%= form_for new_gift, url: gifts_path, html: {method: "post"} do |g|%>
+          <%= g.hidden_field :name %>
+          <%= g.hidden_field :price%>
+          <%= g.hidden_field :url %>
+          <%= g.hidden_field :image %>
+          <%= g.hidden_field :description %>
+          <%= g.fields_for :categories do |cat| %>
+            <%= cat.hidden_field :name %>
+          <% end %>
+          <%= g.submit "Add to Wishlist", class:"card_button"%>
+        <% end %>
       <% end %>
     <% end %>
-  </div>
+  <% end %>
+<% end %>
   <br><br>
 <% end %>
