@@ -13,7 +13,7 @@
         <%= render 'layouts/navbar' %>
     </header>
 
-    <%= render 'layouts/welcome' if !user_signed_in? %>
+    <%= render 'layouts/welcome' if !user_signed_in? && current_page?(root_path) %>
 
     <div class="wrapper">
       <div class="main">
