@@ -1,7 +1,9 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  decorates_assigned :list
+
   def index
-    @lists = List.all
+    @lists = List.all.decorate
     @gifts = Gift.all
   end
 

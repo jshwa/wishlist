@@ -1,11 +1,8 @@
 <h1>Wishlists</h1>
 
 <ul class="wishlists">
-  <% @lists.each do |list| %>
-    <% if list.user != current_user %>
-      <li><%= link_to (image_tag list.user.image), list_path(list) %> <br>
-          <%= link_to list.user.username, list_path(list) %></li>
-    <% end %>
+  <% @lists.each do |list|%>
+    <%= list.display_users %>
   <% end %>
 </ul>
 
