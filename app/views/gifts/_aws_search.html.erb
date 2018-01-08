@@ -1,6 +1,7 @@
 
 <% Gift.amazon_search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
   <div>
+    <% unless item.is_a?(Array) %>
     <% new_gift = Gift.new_gift_from_amazon(item) %>
     <%= image_tag new_gift.image %> <br>
     <%= link_to new_gift.name, new_gift.url, target: "_blank" %> | <%= number_to_currency(new_gift.price) %><br>
@@ -19,6 +20,7 @@
         <%= cat.hidden_field :name %>
       <% end %>
       <%= g.submit "Add to Wishlist" %>
+      <% end %>
       <% end %>
     <% end %>
   </div>
