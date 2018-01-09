@@ -348,6 +348,143 @@ p.rating {
   content: "\f005";
 }
 
+/**** login ****/
+.login_wrapper {
+  height: 70vh;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+
+.login {
+  display: inline-block;
+  width: 350px;
+  background: white;
+  border-radius: 5px;
+  padding: 1em 1.5em;
+  box-shadow: 3px 3px 5px #888888;
+  text-decoration: none;
+  text-align: center
+}
+
+.login h2{
+  margin-top: 0;
+}
+
+.login .field label {
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 125px;
+  padding: 5px 10px;
+  text-align: right;
+}
+
+.login .field input {
+  border: 1px solid black;
+  width: 150px;
+  border-radius: 2px;
+  padding: 5px;
+  height: 15px;
+  float: left;
+}
+
+.login .actions {
+  display:block;
+  float: none;
+}
+
+.login .actions input {
+  width: 150px;
+  background: #3366ff;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 12px;
+}
+
+.login .fbutton {
+  display: inline-block;
+  align-self: center;
+  margin: 1em 0;
+}
+
+.login .fbutton a {
+  text-decoration: none;
+  color: white;
+}
+
+/**** Signup ****/
+
+.signup_wrapper {
+  height: 70vh;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+
+.signup {
+  width: auto;
+  background: white;
+  border-radius: 5px;
+  padding: 2em 3em;
+  position: relative;
+  box-shadow: 3px 3px 5px #888888;
+  text-decoration: none;
+  text-align: center;
+}
+
+.signup h2 {
+  margin-top: 0;
+}
+
+.signup .field label {
+  display: inline-block;
+  float: left;
+  clear: left;
+  text-align: left;
+  width: 200px;
+  margin: 5px 5px;
+}
+
+.signup .field input {
+  float: left;
+  clear: left;
+  width: 100%;
+  height: 2em;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 0 0 0 5px;
+}
+
+.signup .pass_min {
+  float: left;
+  clear: both;
+  font-size: 12px;
+}
+
+.signup .actions input {
+  width: 150px;
+  background: #3366ff;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 12px;
+  margin: 1em;
+}
+
+.signup .fbutton a {
+  text-decoration: none;
+  color: white;
+}
 /**** star rating  ****/
 
 .rating { float:left;}
@@ -379,6 +516,57 @@ p.rating {
 p.rating i {
   color: #FFD700;
 }
+
+/***** Facebook Button ****/
+
+.social_button {
+  box-sizing: border-box;
+  position: relative;
+  max-width: 15em;
+  margin: 0.2em;
+  padding: 0 15px 0 46px;
+  border: none;
+  text-align: center;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  font-size: 16px;
+  color: #FFF;
+}
+.social_button:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+}
+.social_button:focus {
+  outline: none;
+}
+.social_button:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+
+/* Facebook */
+.fbutton {
+  background-color: #4C69BA;
+  background-image: linear-gradient(#4C69BA, #3B55A0);
+  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  text-shadow: 0 -1px 0 #354C8C;
+}
+.fbutton:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+.fbutton:hover,
+.fbutton:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+
 
 /**** AMAZON button ****/
 .amazon_button {
