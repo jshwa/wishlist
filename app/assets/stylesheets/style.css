@@ -188,6 +188,19 @@ ul.nav li:first-child {
   padding: 1em;
 }
 
+/**** Errors ****/
+
+#error_explanation ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  color: red;
+}
+
+.field_with_errors input {
+  box-shadow: 0 0 6px red;
+}
+
 /**** wishlists ****/
 
 .wishlists {
@@ -232,7 +245,7 @@ ul.nav li:first-child {
 .wishlist_desc a {
   background: #0F2041;;
   color: white;
-  margin: 0 2em;
+  margin: 1em 2em 0;
   padding: 0.5rem;
   border: none;
   border-radius: 5px;
@@ -550,13 +563,6 @@ p.rating {
 
 .signup .fbutton a {
   color: white;
-}
-
-.signup #error_explanation ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  color: red;
 }
 
 /**** Edit User ****/
