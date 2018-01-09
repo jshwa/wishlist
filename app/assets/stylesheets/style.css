@@ -16,6 +16,11 @@ body {
     "nav nav nav"
 }
 
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
 /**** top_bar ****/
 
 .top_bar {
@@ -153,7 +158,8 @@ ul.nav li:first-child {
 
 .welcome_back_container {
   max-height: 300px;
-  background: url("shooting_stars.jpg");
+  background: url("shooting_stars.png");
+  background-size: 100% 100%;
   background-position: bottom;
 }
 
@@ -509,6 +515,109 @@ p.rating {
   padding: 0;
   color: red;
 }
+
+/**** Edit User ****/
+#edit_user.edit_user {
+  border: 1px solid #0F2041;
+  box-shadow: 3px 3px 5px #888888;
+  border-radius: 5px;
+  background: white;
+  margin: 1em;
+  padding: 1em;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "image bio"
+      "user_info user_info";
+}
+
+.image {
+  grid-area: image;
+  text-align: center;
+  padding: 10px;
+}
+
+.image img,
+.image label,
+.bio label {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.image input,
+.user_info input {
+  width: 200px;
+  margin: 10px;
+  padding: .5em;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.user_info .field input {
+  width: 450px;
+  height: 2em;
+  font-size: 14px;
+  margin: 10px 30px;
+}
+
+.bio {
+  grid-area: bio;
+  padding: 10px;
+}
+
+textarea#user_bio {
+  padding: 10px;
+  width: 350px;
+  height: 250px;
+  font-size: 14px;
+}
+
+.user_info {
+  grid-area: user_info;
+  width: 500px;
+}
+
+.user_info label {
+  font-weight: bold;
+}
+
+.user_info .field {
+  width: 500px;
+  padding: 0;
+  margin: 0;
+}
+
+.user_info input#user_searchable {
+  width: auto;
+  height: auto;
+  font-size: 18px;
+  margin: 10px ;
+}
+
+.user_info .actions input{
+  display: block;
+  width: 500px;
+  background: #0F2041;
+  color: white;
+  margin: 1em;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.cancel {
+  border: 1px solid #0F2041;
+  box-shadow: 3px 3px 5px #888888;
+  border-radius: 5px;
+  background: white;
+  margin: 1em;
+  padding: 1em 2.5em;
+  text-align: center;
+}
+
 /**** star rating  ****/
 
 .rating { float:left;}
