@@ -7,6 +7,6 @@
       <%= render 'gifts/aws_search_form' unless current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
     </div>
     <div class="welcome">
-      <%= "Welcome #{current_user.username}" if user_signed_in? %>
+      <%= link_to "Welcome #{current_user.username}", edit_user_registration_path if user_signed_in? %>
     </div>
   </div>
