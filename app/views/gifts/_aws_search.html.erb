@@ -5,7 +5,7 @@
         <% new_gift = Gift.new_gift_from_amazon(item) %>
         <%= image_tag new_gift.image %> <br>
         <%= link_to shorten_name(new_gift.name), new_gift.url, target: "_blank" %>
-        <%= link_to number_to_currency(new_gift.price), new_gift.url, target: "_blank" %><br>
+        <%= link_to_if new_gift.price != nil, number_to_currency(new_gift.price), new_gift.url, target: "_blank" %><br>
         <% new_gift.categories.build(name: item["ItemAttributes"]["Binding"]) %>
         <br><br>
 
