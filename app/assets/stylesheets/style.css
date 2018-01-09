@@ -421,8 +421,8 @@ p.rating {
 /**** Signup ****/
 
 .signup_wrapper {
-  height: 70vh;
-  max-height: 600px;
+  height: 100%;
+  padding-top: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -431,6 +431,7 @@ p.rating {
 }
 
 .signup {
+  height: auto;
   width: auto;
   background: white;
   border-radius: 5px;
@@ -481,9 +482,22 @@ p.rating {
   margin: 1em;
 }
 
+.signup .fbutton {
+  display: inline-block;
+  align-self: center;
+  margin: 1em 0;
+}
+
 .signup .fbutton a {
   text-decoration: none;
   color: white;
+}
+
+.signup #error_explanation ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  color: red;
 }
 /**** star rating  ****/
 
