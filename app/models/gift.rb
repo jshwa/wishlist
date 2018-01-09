@@ -65,13 +65,12 @@ class Gift < ApplicationRecord
       unknown_gift
     else
       new_gift = where(url: item["DetailPageURL"]).first_or_initialize
-
-      if item["MediumImage"]
-        new_gift.image = item["MediumImage"]["URL"]
-      elsif item["ImageSets"]["ImageSet"][0]
-        new_gift.image = item["ImageSets"]["ImageSet"][0]["MediumImage"]["URL"]
-      elsif item["ImageSets"]["ImageSet"]
-        new_gift.image = item["ImageSets"]["ImageSet"]["MediumImage"]["URL"]
+      if item.dig("MediumImage")
+        new_gift.image = item.dig("MediumImage", "URL")
+      elsif item.dig("ImageSets", "ImageSet")
+        new_gift.image = item.dig("ImageSets", "ImageSet", "MediumImage", "URL")
+      elsif item.dig("ImageSets", "ImageSet", 0)
+        new_gift.image = item.dig("ImageSets", "ImageSet", 0, "MediumImage", "URL")
       else
         new_gift.image = ""
       end
@@ -79,12 +78,12 @@ class Gift < ApplicationRecord
       new_gift.name = item["ItemAttributes"]["Title"]
       new_gift.url = item["DetailPageURL"]
 
-      if item["OfferSummary"]["LowestNewPrice"]
-        new_gift.price = item["OfferSummary"]["LowestNewPrice"]["Amount"].to_f/100
-      elsif item["OfferSummary"]["LowestUsedPrice"]
-        new_gift.price = item["OfferSummary"]["LowestUsedPrice"]["Amount"].to_f/100
+      if item.dig("OfferSummary", "LowestNewPrice")
+        new_gift.price = item.dig("OfferSummary", "LowestNewPrice", "Amount").to_f/100
+      elsif item.dig("OfferSummary", "LowestUsedPrice")
+        new_gift.price = item.dig("OfferSummary", "LowestUsedPrice", "Amount").to_f/100
       else
-        new_gift.price = 0;
+        new_gift.price = nil
       end
 
       if item["ItemAttributes"]["Feature"].is_a?(Array)
