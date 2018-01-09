@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   get 'users/edit_username', to: 'users#edit_username', as: 'edit_username'
 
-  resources :lists, only: [:index, :edit, :show]
+  resources :lists, only: [:index, :edit, :show, :update]
   resources :categories
-  
+
   resources :gifts, only: [:index, :show, :new, :create, :update, :destroy] do
     resources :reviews
   end

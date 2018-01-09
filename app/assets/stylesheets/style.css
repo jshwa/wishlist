@@ -6,6 +6,10 @@ body {
   background: #F7F7F7;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header{
   grid-area: header;
   display: grid;
@@ -17,7 +21,6 @@ body {
 }
 
 .header a {
-  text-decoration: none;
   color: white;
 }
 
@@ -51,7 +54,6 @@ body {
   margin: 0;
   margin-top: .25em;
   padding: 0;
-  text-decoration: none;
   color: white;
 }
 
@@ -125,7 +127,6 @@ ul.nav li:first-child {
 
 .nav li a{
   color: white;
-  text-decoration: none;
   padding: 10px;
   margin: 0 10px 0 10px;
 }
@@ -178,6 +179,15 @@ ul.nav li:first-child {
   width: 100%;
 }
 
+.big_box {
+  border: 1px solid #0F2041;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #888888;
+  background: white;
+  margin: 1em;
+  padding: 1em;
+}
+
 /**** wishlists ****/
 
 .wishlists {
@@ -190,7 +200,6 @@ ul.nav li:first-child {
 .wishlists li img,
 .wishlists li a {
   display: block;
-  text-decoration: none;
   color: black;
   margin: 2px auto;
   font-size: 16px;
@@ -201,7 +210,41 @@ ul.nav li:first-child {
   width: 50px;
 }
 
+.edit_wishlist_desc,
+.wishlist_desc {
+  overflow: hidden;
+}
 
+.edit_wishlist_desc label {
+  font-weight: bold;
+}
+
+.edit_wishlist_desc textarea {
+  display: block;
+  width: 90%;
+  height: 10em;
+  margin: 2em auto 0 auto;
+  padding: 1em;
+  font-size: 14px;
+}
+
+.edit_wishlist_desc input,
+.wishlist_desc a {
+  background: #0F2041;;
+  color: white;
+  margin: 0 2em;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  float: right;
+}
+
+.wishlist_desc a {
+  width: 4em;
+  text-align: center;
+  font-family: arial;
+}
 /**** gifts  ****/
 
 .gift_list {
@@ -223,7 +266,6 @@ ul.nav li:first-child {
   padding: 1.5em;
   position: relative;
   box-shadow: 3px 3px 5px #888888;
-  text-decoration: none;
 }
 
 .gift_list li img {
@@ -235,7 +277,6 @@ ul.nav li:first-child {
 
 .gift_list a {
   display: block;
-  text-decoration: none;
   font-weight: bold;
   color: #0F2041;
   text-align: center;
@@ -270,6 +311,7 @@ ul.nav li:first-child {
   border-radius: 1rem;
   font-size: 12px;
 }
+
 .gift_item {
   border: 1px solid #0F2041;
   border-radius: 5px;
@@ -426,7 +468,6 @@ p.rating {
 }
 
 .login .fbutton a {
-  text-decoration: none;
   color: white;
 }
 
@@ -505,7 +546,6 @@ p.rating {
 }
 
 .signup .fbutton a {
-  text-decoration: none;
   color: white;
 }
 
