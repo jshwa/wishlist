@@ -133,7 +133,7 @@ ul.nav li:first-child {
 
 /**** Welcome ****/
 
-.intro_container {
+.intro_container, .welcome_back_container {
   height: 70vh;
   max-height: 600px;
   background: url("dandelion.jpg");
@@ -144,11 +144,17 @@ ul.nav li:first-child {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Arial;
+  font-family: helvetica;
 }
 
-.intro {
+.intro, .welcome_back {
   text-align: center;
+}
+
+.welcome_back_container {
+  max-height: 300px;
+  background: url("shooting_stars.jpg");
+  background-position: bottom;
 }
 
 /**** main ****/
@@ -416,6 +422,10 @@ p.rating {
 .login .fbutton a {
   text-decoration: none;
   color: white;
+}
+
+.login p.alert {
+  color: red
 }
 
 /**** Signup ****/

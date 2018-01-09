@@ -13,14 +13,17 @@
         <%= render 'layouts/navbar' %>
     </header>
 
-    <%= render 'layouts/welcome' if !user_signed_in? && current_page?(root_path) %>
+    <%= render 'layouts/welcome' if current_page?(root_path) %>
 
     <div class="wrapper">
       <div class="main">
-        <% if notice || alert %>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+        <% unless !current_page?(new_user_session_path) %>
+          <% if notice || alert %>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+          <% end %>
         <% end %>
+
         <%= yield %>
       </div>
     </div>
