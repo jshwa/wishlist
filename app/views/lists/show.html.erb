@@ -1,4 +1,4 @@
-<h1><%= @list.user.username.capitalize %>'s Wishlist</h1>
+<%= tag.h1 "#{@list.user.username.capitalize}'s Wishlist" %>
 
 <%= tag.h2 "About #{@list.user.username.capitalize}'s Wishlist:" %>
   <%= tag.div class:"big_box wishlist_desc" do %>
@@ -6,10 +6,17 @@
     <%= link_to "Edit", edit_list_path %>
   <% end %>
 
-<ul class="gift_list">
-  <% @list.gifts.each do |gift| %>
-    <li><%= link_to (image_tag gift.image), gift_path(gift) %>
-      <h4><%= link_to shorten_name(gift.name), gift_path(gift) %></h4>
-          <%= button_to "Reviews", gift_reviews_path(gift), method: 'get', class:'card_button' %>
+<% @list.gifts.each do |gift| %>
+  <%= tag.div class:"gift_item" do %>
+    <%= tag.div class:"image_and_button" do %>
+      <%= link_to (image_tag gift.image), gift_path(gift) %> <br><br>
+      <%= button_to "Reviews", gift_reviews_path(gift), method: 'get', class:'item_button' %>
+    <% end %>
+
+    <%= tag.div class:"gift_info" do %>
+      <%= tag.h2 link_to "#{gift.name}", gift_path(gift) %>
+      <%= tag.h3 "Description:" %><%= gift.description %> <br><br>
+      <strong>Price:</strong> <%= number_to_currency(gift.price) %><br><br>
+    <% end %>
+  <% end %>
 <% end %>
-</ul>
