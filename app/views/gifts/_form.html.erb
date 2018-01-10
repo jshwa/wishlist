@@ -1,22 +1,29 @@
-<%= form_for gift do |g| %>
-  <%= g.label :name %>
-  <%= g.text_field :name %> <br><br>
-  <%= g.label "Price $" %>
-  <%= g.text_field :price %> <br><br>
-  <%= g.label "Image URL" %>
-  <%= g.text_field :image %> <br><br>
-  <%= g.label "Where to buy(URL)" %>
-  <%= g.text_field :url %> <br><br>
-  <%= g.label :description %>
-  <%= g.text_area :description %> <br><br>
+<%= tag.div class:'new_gift_container' do %>
+  <%= tag.div class:'new_gift_form form' do %>
+    <%= form_for gift do |g| %>
+      <% gift.errors.full_messages.each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+      <%= g.label :name %>
+      <%= g.text_field :name %> <br><br>
+      <%= g.label :price, "Price $" %>
+      <%= g.text_field :price %> <br><br>
+      <%= g.label :image, "Image URL" %>
+      <%= g.text_field :image %> <br><br>
+      <%= g.label :url, "Where to buy (URL)" %>
+      <%= g.text_field :url %> <br><br>
+      <%= g.label :description %>
+      <%= g.text_area :description %> <br><br>
 
-<h2>Pick a Category: </h2>
-  <%= g.collection_select :category_ids, Category.all, :id, :name, prompt: true %><br><br>
-  <strong>Or add your own</strong> <br><br>
-  <%= g.fields_for :categories do |cat| %>
-    <%= cat.label :name %>
-    <%= cat.text_field :name %>
+    <h2>Pick a Category: </h2>
+      <%= g.collection_select :category_ids, Category.all, :id, :name, include_blank: true %><br><br>
+      <strong>Or add your own</strong> <br><br>
+      <%= g.fields_for :categories do |cat| %>
+        <%= cat.label :name %>
+        <%= cat.text_field :name %>
+      <% end %>
+
+    <%= g.submit class:"new_gift_btn" %>
+    <% end %>
   <% end %>
-
-<%= g.submit %>
 <% end %>

@@ -1,4 +1,5 @@
 class GiftsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_gift, only: [:update, :destroy]
 
   def index
@@ -11,27 +12,23 @@ class GiftsController < ApplicationController
   end
 
   def create
-    if user_signed_in?
-      gift = Gift.new(gift_params)
-      gift.save
-      gift.lists.push(current_user.list)
+    @gift = Gift.new(gift_params)
+    if @gift.save
+      @gift.lists.push(current_user.list)
       redirect_to list_path(current_user.list)
     else
-      redirect_to new_user_session_path
+      @category = @gift.categories.build
+      render :new
     end
   end
 
   def update
-    if user_signed_in?
-      if @gift.users.where(id: current_user.id).exists?
-        flash[:notice] = " #{@gift.name} is already on your wishlist"
-        redirect_to list_path(current_user.list)
-      else
-        @gift.lists.push current_user.list
-        redirect_to list_path(current_user.list)
-      end
+    if @gift.users.where(id: current_user.id).exists?
+      flash[:notice] = " #{@gift.name} is already on your wishlist"
+      redirect_to list_path(current_user.list)
     else
-      redirect_to new_user_session_path
+      @gift.lists.push current_user.list
+      redirect_to list_path(current_user.list)
     end
   end
 

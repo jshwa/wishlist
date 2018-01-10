@@ -5,16 +5,21 @@ class Gift < ApplicationRecord
   has_many :category_gifts
   has_many :categories, through: :category_gifts
   has_many :reviews
+  validates :name, presence: :true, uniqueness: :true
+  validates_presence_of :category_gifts
+
 
   # Amazon API Constants
   ENDPOINT = "webservices.amazon.com"
   REQUEST_URI = "/onca/xml"
 
   def categories_attributes=(categories_attributes)
-    categories_attributes.each do |i, cat_attr|
-      category = Category.find_or_create_by(name: cat_attr[:name])
-      category.name = "Uncategorized" if category.name == ""
-      self.categories << category
+    categories_attributes.each do |i, category_attr|
+      if category_attr[:name] != ""
+        category = Category.find_or_create_by(name: category_attr[:name])
+        category.name = "Uncategorized" if category.name == ""
+        self.categories << category
+      end
     end
   end
 
