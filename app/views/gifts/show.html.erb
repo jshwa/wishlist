@@ -4,7 +4,8 @@
   <%= tag.div class:'item_box' do %>
     <%= tag.div class:"image_and_button" do %>
       <%= image_tag @gift.image %> <br><br>
-      <%= @gift.add_a_button %> <br><br>
+      <%= button_to "Reviews", gift_reviews_path(@gift), method: 'get', class:'item_button' %><%= tag.br %>
+      <%= add_a_button(@gift) %> <br><br>
     <% end %>
 
     <%= tag.div class:"gift_info" do %>
