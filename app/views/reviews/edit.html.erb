@@ -1,2 +1,6 @@
 <h1>Edit Your Comment</h1>
 <%= render partial: 'form', locals: {review: @review} %>
+
+<%= form_for @review, url: gift_review_path(@review.gift, @review), method: "delete" do |r| %>
+  <%= r.submit "Delete Review", class:"md_delete_btn"%>
+<% end %>

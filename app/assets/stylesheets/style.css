@@ -388,19 +388,6 @@ ul.nav li:first-child {
   color: white;
 }
 
-.gift_info form.edit_gift .big_delete_btn {
-  border: 1px solid #0F2041;
-  border-radius: 5px;
-  background: #0F2041;
-  color: #FFF;
-  font-size: 12px;
-  font-family: arial;
-  height: 30px;
-  width: 300px;
-  float: center;
-  margin: 1em 0;
-}
-
 .x {
    width: 100%;
 }
@@ -425,6 +412,7 @@ ul.nav li:first-child {
 
 .review_item {
   border: 1px solid #0F2041;
+  box-shadow: 3px 3px 5px #888888;
   border-radius: 5px;
   background: white;
   margin: 1em;
@@ -434,7 +422,7 @@ ul.nav li:first-child {
 .big_btn {
   display: block;
   width: 97%;
-  background: #0F2041;
+  background: #36f;
   color: white;
   margin: 1em;
   padding: 1em;
@@ -465,6 +453,20 @@ ul.nav li:first-child {
 
 p.rating {
   content: "\f005";
+}
+
+.edit_review .md_delete_btn {
+  border: 1px solid #0F2041;
+  border-radius: 5px;
+  background: #0F2041;
+  color: #FFF;
+  font-size: 12px;
+  font-family: arial;
+  height: auto;
+  width: auto;
+  float: right;
+  margin: 1em 2em;
+  padding: 1em;
 }
 
 /**** Categories ****/
