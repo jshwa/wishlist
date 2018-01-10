@@ -3,14 +3,11 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update]
 
   def index
-    if params[:user_id]
-      @user = User.find_by(id: params[:user_id])
-      @gift = nil
-      @reviews = @user.reviews.decorate
+    @user = User.find_by(id: params[:user_id])
+    if obj = @user || @gift
+      @reviews = obj.reviews.decorate
     else
-      @gift = Gift.find_by(id: params[:gift_id])
-      @user = nil
-      @reviews= @gift.reviews.decorate
+      redirect_to root_path
     end
   end
 
