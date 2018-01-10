@@ -344,8 +344,9 @@ ul.nav li:first-child {
 }
 
 .item_box {
+  width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 10px 0 0;
   display: flex;
   align-items: center;
 }
@@ -638,6 +639,52 @@ p.rating {
 
 .signup .fbutton a {
   color: white;
+}
+.username_wrapper {
+  height: 100%;
+  padding-top: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+.username_select {
+  display: block;
+  height: auto;
+  width: auto;
+  background: white;
+  border-radius: 5px;
+  padding: 2em 2em;
+  box-shadow: 3px 3px 5px #888888;
+  text-decoration: none;
+  text-align: center;
+}
+
+.username_select h1 {
+  margin-top: 0;
+}
+
+.username_select input#user_username {
+  padding: 0;
+  border: 1px solid #888888;
+  border-radius: 3px;
+  height: 2em;
+  width: 250px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.username_select .update_btn {
+  width: 150px;
+  margin: 1em;
+  background: #3366ff;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 5px #888888;
+  font-size: 12px;
 }
 
 /**** Edit User ****/
