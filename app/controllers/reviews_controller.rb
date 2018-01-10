@@ -1,10 +1,12 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_gift, only: [:index, :show, :new, :edit, :create]
-  before_action :set_review, only: [:update]
+  before_action :set_gift, only: [:show, :new, :edit, :create, :destroy]
+  before_action :check_valid_url, only: [:show, :edit, :destroy]
+  before_action :check_correct_user, only: [:edit, :destroy]
 
   def index
-    @user = User.find_by(id: params[:user_id])
+    @gift = params[:gift_id] ? Gift.find_by(id: params[:gift_id]) : nil
+    @user = params[:user_id] ? User.find_by(id: params[:user_id]) : nil
     if obj = @user || @gift
       @reviews = obj.reviews.decorate
     else
@@ -13,14 +15,10 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    if @gift.nil?
-      redirect_to gifts_path, alert: "Gift not found"
+    if review = current_user.wrote_a_review?(@gift)
+      redirect_to edit_gift_review_path(@gift, review)
     else
-      if review = current_user.wrote_a_review?(@gift)
-        redirect_to edit_gift_review_path(@gift, review)
-      else
-        @review = @gift.reviews.build
-      end
+      @review = @gift.reviews.build
     end
   end
 
@@ -35,22 +33,8 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def edit
-    if @gift.nil?
-      redirect_to gifts_path, alert: "Gift not found"
-    else
-      @review = @gift.reviews.find_by(id: params[:id])
-      if @review.nil?
-        redirect_to gift_reviews_path(@gift), alert: "Review not found"
-      else
-        if @review.user != current_user
-          redirect_to gift_reviews_path(@gift)
-        end
-      end
-    end
-  end
-
   def update
+    @review = Review.find_by(id: params[:id])
     if @review.user != current_user
       redirect_to gift_reviews_path(@review.gift)
     else
@@ -59,15 +43,9 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def show
-    if @gift.nil?
-      redirect_to gifts_path, alert: "Gift not found"
-    else
-      @review = @gift.reviews.find_by(id: params[:id])
-      if @review.nil?
-        redirect_to gift_reviews_path(@gift), alert: "Review not found"
-      end
-    end
+  def destroy
+    @review.destroy
+    redirect_to gift_reviews_path(@gift)
   end
 
   private
@@ -77,10 +55,23 @@ class ReviewsController < ApplicationController
   end
 
   def set_gift
-    @gift = Gift.find_by(id: params[:gift_id])
+    @gift = params[:gift_id] ? Gift.find_by(id: params[:gift_id]) : nil
+    if @gift.nil?
+      redirect_to gifts_path, alert: "Gift not found"
+    end
   end
 
-  def set_review
-    @review = Review.find_by(id: params[:id])
+  def check_valid_url
+    @review = @gift.reviews.find_by(id: params[:id])
+    if @review.nil?
+      redirect_to gift_reviews_path(@gift), alert: "Review not found"
+    end
   end
+
+  def check_correct_user
+    if @review.user != current_user
+      redirect_to gift_reviews_path(@gift)
+    end
+  end
+
 end
