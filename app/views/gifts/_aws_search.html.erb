@@ -8,11 +8,16 @@
         <%= link_to_if new_gift.price != nil, number_to_currency(new_gift.price), new_gift.url, target: "_blank" %><br>
         <% new_gift.categories.build(name: item["ItemAttributes"]["Binding"]) %>
         <br><br>
+        <% if new_gift.persisted? && current_user && current_user.gifts.include?(new_gift) %>
+          <%= button_to "On Your Wishlist", list_path(current_user.list), method: 'get', class: 'card_button_added' %>
+        <% elsif new_gift.persisted? %>
+        <%= form_for new_gift, url: gift_path(new_gift), html: {method: "patch"} do |g| %>
+          <%= g.submit "Add to Wishlist", class:'card_button' %>
+          <% end %>
+        <% end %>
 
 <% #add to wishlist button %>
-      <% if new_gift.persisted? %>
-        <%= button_to "On Your Wishlist", list_path(current_user.list), method: 'get', class: 'card_button_added'%>
-      <% else %>
+      <% unless new_gift.persisted? %>
         <%= form_for new_gift, url: gifts_path, html: {method: "post"} do |g|%>
           <%= g.hidden_field :name %>
           <%= g.hidden_field :price%>
