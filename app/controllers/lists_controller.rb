@@ -8,13 +8,10 @@ class ListsController < ApplicationController
     @gifts = Gift.all
   end
 
-  def new
-  end
-
   def edit
     if @list
       if @list.user == current_user
-        render edit_list_path(@list)
+        render :edit
       else
         redirect_to list_path(current_user.list)
       end
@@ -33,7 +30,11 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find_by(id: params[:id])
+    if @list
+      render :show
+    else
+      redirect_to root_path
+    end
   end
 
   private
