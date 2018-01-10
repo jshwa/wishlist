@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :user
   belongs_to :gift
+  validates :stars, presence: :true
 
   def display_rating
     rating = ""

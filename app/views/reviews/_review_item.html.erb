@@ -1,4 +1,5 @@
 <%= content_tag :div, class: "review_item" do %>
+  <%= tag.h2 link_to "#{review.gift.name}", gift_path(review.gift) %>
   <strong><%= review.user.username %></strong> on <%= formatted_updated_at review %> <br>
   <p class="rating">Rating: <%= review.display_rating %></p> <br><br>
   <p> Review: <%= review.comment %> </p>

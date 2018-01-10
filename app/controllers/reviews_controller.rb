@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_gift, only: [:show, :new, :edit, :create, :destroy]
+  before_action :check_already_reviewed, only: [:new, :create]
   before_action :check_valid_url, only: [:show, :edit, :destroy]
   before_action :check_correct_user, only: [:edit, :destroy]
 
@@ -15,21 +16,17 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    if review = current_user.wrote_a_review?(@gift)
-      redirect_to edit_gift_review_path(@gift, review)
-    else
-      @review = @gift.reviews.build
-    end
+    @review = @gift.reviews.build
   end
 
   def create
-    review = @gift.reviews.build(review_params)
-    review.user = current_user
-    if review.save
-      redirect_to gift_review_path(@gift, review)
+    @review = @gift.reviews.build(review_params)
+    @review.user = current_user
+    if @review.save
+      redirect_to gift_review_path(@gift, @review)
     else
       flash[:alert] = "There was a problem saving your review"
-      render new_gift_review(@gift)
+      render :new
     end
   end
 
@@ -74,4 +71,9 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def check_already_reviewed
+    if review = current_user.wrote_a_review?(@gift)
+      redirect_to edit_gift_review_path(@gift, review)
+    end
+  end
 end
