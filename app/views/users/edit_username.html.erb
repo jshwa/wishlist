@@ -1,9 +1,11 @@
-<h1>Choose a username:</h1>
-
-<%= form_for(@user, url: user_path(@user), html: { method: :put }) do |f| %>
-  <div class="field">
-    <%= f.text_field :username %>
-    <%= f.submit %>
-  </div>
-
+<%= tag.div class:"username_wrapper" do %>
+  <%= tag.div class:"username_select" do %>
+    <%= tag.h1 "Choose a username:" %>
+    <%= form_for(@user, url: user_path(@user), html: { method: :put }) do |f| %>
+      <%= tag.div class:"field" do %>
+        <%= f.text_field :username %><%= tag.br %>
+        <%= f.submit class:"update_btn" %>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>

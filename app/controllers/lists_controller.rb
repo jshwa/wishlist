@@ -1,7 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_list, only: [:edit, :update, :show]
-  decorates_assigned :list
 
   def index
     @lists = List.all.decorate
