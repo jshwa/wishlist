@@ -13,10 +13,14 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    if review = current_user.wrote_a_review?(@gift)
-      redirect_to edit_gift_review_path(@gift, review)
+    if @gift.nil?
+      redirect_to gifts_path, alert: "Gift not found"
     else
-      @review = @gift.reviews.build
+      if review = current_user.wrote_a_review?(@gift)
+        redirect_to edit_gift_review_path(@gift, review)
+      else
+        @review = @gift.reviews.build
+      end
     end
   end
 
