@@ -1,23 +1,25 @@
 <h1><%= @gift.name.capitalize %></h1>
 
 <%= tag.div class:'gift_item' do %>
-  <%= tag.div class:"image_and_button" do %>
-    <%= image_tag @gift.image %> <br><br>
-    <%= @gift.add_a_button %> <br><br>
-  <% end %>
+  <%= tag.div class:'item_box' do %>
+    <%= tag.div class:"image_and_button" do %>
+      <%= image_tag @gift.image %> <br><br>
+      <%= @gift.add_a_button %> <br><br>
+    <% end %>
 
-  <%= tag.div class:"gift_info" do %>
-    <h3>Description: </h3><%= @gift.description %> <br><br>
-      <strong>Price:</strong> <%= number_to_currency(@gift.price) %><br><br>
-      <%= link_to "See it on Amazon", @gift.url, target: "_blank", class:'amazon_button' %>
+    <%= tag.div class:"gift_info" do %>
+      <h3>Description: </h3><%= @gift.description %> <br><br>
+        <strong>Price:</strong> <%= number_to_currency(@gift.price) %><br><br>
+        <%= link_to "See it on Amazon", @gift.url, target: "_blank", class:'amazon_button' %>
 
-    <h3>Categories: </h3>
-      <%= render partial: 'categories/list_categories', locals: {categories: @gift.categories} %>
+      <h3>Categories: </h3>
+        <%= render partial: 'categories/list_categories', collection: @gift.categories, as: :category %>
 
-    <br><br>
-    <% if @gift.users.include?(current_user) %>
-      <%= form_for @gift, method: "delete" do |g| %>
-      <%= g.submit "Remove from your Wishlist" %>
+      <br><br>
+      <% if @gift.users.include?(current_user) %>
+        <%= form_for @gift, method: "delete" do |g| %>
+          <%= g.submit "Remove from your Wishlist", class:"big_delete_btn" %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
