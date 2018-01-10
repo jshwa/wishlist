@@ -17,8 +17,8 @@
 
     <div class="wrapper">
       <div class="main">
-        <% unless !current_page?(new_user_session_path) %>
-          <% if notice || alert %>
+        <% unless current_page?(new_user_session_path) %>
+          <% if flash[:notice] || flash[:alert] %>
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
           <% end %>
