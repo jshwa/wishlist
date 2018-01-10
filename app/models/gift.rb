@@ -67,10 +67,10 @@ class Gift < ApplicationRecord
       new_gift = where(url: item["DetailPageURL"]).first_or_initialize
       if item.dig("MediumImage")
         new_gift.image = item.dig("MediumImage", "URL")
-      elsif item.dig("ImageSets", "ImageSet")
-        new_gift.image = item.dig("ImageSets", "ImageSet", "MediumImage", "URL")
       elsif item.dig("ImageSets", "ImageSet", 0)
         new_gift.image = item.dig("ImageSets", "ImageSet", 0, "MediumImage", "URL")
+      elsif item.dig("ImageSets", "ImageSet")
+        new_gift.image = item.dig("ImageSets", "ImageSet", "MediumImage", "URL")
       else
         new_gift.image = ""
       end
