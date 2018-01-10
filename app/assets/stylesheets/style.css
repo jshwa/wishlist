@@ -418,7 +418,37 @@ p.rating {
   content: "\f005";
 }
 
+/**** Categories ****/
+
+.category_index {
+  overflow: hidden;
+}
+
+.category_index h2 {
+  padding: 0 1em;
+}
+
+.category_index ul {
+  padding: 0;
+  overflow: hidden;
+}
+
+.category_index a.see_more {
+  background: #3366ff;
+  color: white;
+  margin: 1em 2em 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  float: right;
+  width: 6em;
+  text-align: center;
+  font-family: arial;
+}
+
 /**** login ****/
+
 .login_wrapper {
   height: 70vh;
   max-height: 600px;

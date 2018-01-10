@@ -1,3 +1,9 @@
-<h1>Categories</h1>
+<%= tag.h1 "Browse by Category" %>
 
-<%= render partial: 'categories/list_categories', locals: {categories: @categories} %> 
+<% @categories.each do |c| %>
+  <%= tag.div class:"big_box category_index"  do %>
+    <%= tag.h2 link_to "#{c.name}", category_path(c) %>
+    <%= render partial: 'gifts/gift_list', locals: {gifts: c.gifts.first(3)} %>
+    <%= link_to "See More", category_path(c), class:'see_more' if c.gifts.length > 3 %>
+  <% end %>
+<% end %>
