@@ -7,7 +7,7 @@ class GiftDecorator < Draper::Decorator
     else
       h.form_for gift, url: h.gift_path(gift), html: {method: "patch"} do |g|
         g.submit "Add to Wishlist", class:'item_button'
-    end
+      end
     end
   end
 end
