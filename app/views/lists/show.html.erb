@@ -3,7 +3,7 @@
 <%= tag.h2 "About #{@list.user.username.capitalize}'s Wishlist:" %>
   <%= tag.div class:"big_box wishlist_desc" do %>
     <%= @list.description %><%= tag.br %>
-    <%= link_to "Edit", edit_list_path %>
+    <%= link_to "Edit", edit_list_path(@list) if current_user == @list.user %>
   <% end %>
 
 <% @list.gifts.each do |gift| %>
