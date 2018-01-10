@@ -10,6 +10,10 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-family: helvetica;
+}
+
 .header{
   grid-area: header;
   display: grid;
@@ -335,11 +339,19 @@ ul.nav li:first-child {
   margin: 1em;
   padding: 1em;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.item_box {
+  margin: 0;
+  padding: 0;
+  display: flex;
   align-items: center;
 }
 
 .image_and_button {
-  width: 50%;
+  width: 30%;
   padding: 2em;
 }
 
@@ -374,6 +386,39 @@ ul.nav li:first-child {
   color: white;
 }
 
+.gift_info form.edit_gift .big_delete_btn {
+  border: 1px solid #0F2041;
+  border-radius: 5px;
+  background: #0F2041;
+  color: #FFF;
+  font-size: 12px;
+  font-family: arial;
+  height: 30px;
+  width: 300px;
+  float: center;
+  margin: 1em 0;
+}
+
+.x {
+   width: 100%;
+}
+
+.x .delete_btn {
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #888888;
+  border-radius: 100px;
+  text-align: center;
+  color: #888888;
+  float: right;
+}
+
+.x .delete_btn:hover {
+  background: #f99090;
+  color: #FFF
+}
 /**** reviews  ****/
 
 .review_item {
