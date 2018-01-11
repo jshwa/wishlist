@@ -3,7 +3,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:edit, :update, :show]
 
   def index
-    @lists = List.all.decorate
+    @lists = List.all
     @gifts = Gift.all
   end
 

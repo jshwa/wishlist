@@ -9,6 +9,9 @@
   <%= tag.div class:"welcome_back_container" do %>
     <%= tag.div class:"welcome_back" do %>
       <%= tag.h1 "Welcome Back #{current_user.username.humanize}" %>
+      <%= tag.h3 "Don't forget to write your wishlist description." %>
+      <%= tag.h3 "Tell us what kinds of gifts you find most interesting!" %>
+      <%= button_to "Start Writing", edit_list_path(current_user.list), method:'get', class:'welcome_btn' %>
     <% end %>
   <% end %>
 <% end %>

@@ -1,10 +1,15 @@
-<h1>Wishlists</h1>
+<%= tag.h1 "Wishlists" %>
 
-<ul class="wishlists">
+<%= tag.ul class:"wishlists" do %>
   <% @lists.each do |list|%>
-    <%= list.display_users %>
+    <%= tag.li do %>
+      <%= link_to (image_tag list.user.image), list_path(list) %>
+    <% end %>
   <% end %>
-</ul>
+<% end %>
+<%= tag.br %>
+<%= tag.br %>
+<%= tag.br %>
 
-<h1>Or Browse Gifts</h1>
+<%= tag.h1 "Or Browse Gifts" %>
 <%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>
