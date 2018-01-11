@@ -146,12 +146,10 @@ ul.nav li:first-child {
 /**** Welcome ****/
 
 .intro_container {
-  height: 70vh;
+  height: 50vh;
   max-height: 600px;
-  background: url("dandelion.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: white;
+  background: rgba(255,255,255,.8);
+  color: #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -581,7 +579,8 @@ p.rating {
 }
 
 .category_index h2 {
-  padding: 0 1em;
+  border-bottom: 1px solid #888;
+  margin: .5em 1.5em;
 }
 
 .category_index ul {

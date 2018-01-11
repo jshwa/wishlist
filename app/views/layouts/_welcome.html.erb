@@ -2,7 +2,9 @@
   <%= tag.div class:"intro_container" do %>
     <%= tag.div class:"intro" do %>
       <%= tag.h1 "Welcome to Wishlist!" %>
-      <%= tag.h3 "Create a wishlist and whatnot" %>
+      <%= tag.h3 "Find the perfect gift for him or her" %>
+      <%= tag.h3 "And help everyone else get you what you really wanted" %>
+      <%= button_to "Get Started", new_user_registration_path, method:'get', class:'welcome_btn' %>
     <% end %>
   <% end %>
 <% else %>
