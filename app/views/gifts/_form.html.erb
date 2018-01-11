@@ -18,9 +18,9 @@
     <h2>Pick a Category: </h2>
       <%= g.collection_select :category_ids, Category.all, :id, :name, include_blank: true %><br><br>
       <strong>Or add your own</strong> <br><br>
-      <%= g.fields_for :categories do |cat| %>
-        <%= cat.label :name %>
-        <%= cat.text_field :name %>
+      <%= g.fields_for :categories, gift.categories.build do |c| %>
+        <%= c.label :name %>
+        <%= c.text_field :name, value: nil %>
       <% end %>
 
     <%= g.submit class:"new_gift_btn" %>

@@ -1,6 +1,6 @@
 class GiftsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_gift, only: [:update, :destroy]
+  before_action :set_gift, :check_permissions, only: [:edit, :update, :destroy]
 
   def index
     @gifts = Gift.search(params[:gift_search])
@@ -8,7 +8,6 @@ class GiftsController < ApplicationController
 
   def new
     @gift = Gift.new
-    @category = @gift.categories.build
   end
 
   def create
@@ -24,7 +23,8 @@ class GiftsController < ApplicationController
   end
 
   def update
-
+    @gift.update(gift_params)
+    redirect_to gift_path(@gift)
   end
 
   def show
@@ -45,6 +45,12 @@ class GiftsController < ApplicationController
     if @gift = Gift.find_by(id: params[:id])
     else
       redirect_to gifts_path
+    end
+  end
+
+  def check_permissions
+    unless @gift.created_by == current_user.id
+      redirect_to gift_path(@gift) || gifts_path
     end
   end
 end

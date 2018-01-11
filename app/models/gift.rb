@@ -14,7 +14,7 @@ class Gift < ApplicationRecord
   REQUEST_URI = "/onca/xml"
 
   def categories_attributes=(categories_attributes)
-    categories_attributes.each do |i, category_attr|
+    categories_attributes.values.each do |category_attr|
       if category_attr[:name] != ""
         category = Category.find_or_create_by(name: category_attr[:name])
         category.name = "Uncategorized" if category.name == ""
