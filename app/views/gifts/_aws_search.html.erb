@@ -11,7 +11,7 @@
         <% if new_gift.persisted? && current_user && current_user.gifts.include?(new_gift) %>
           <%= button_to "On Your Wishlist", list_path(current_user.list), method: 'get', class: 'card_button_added' %>
         <% elsif new_gift.persisted? %>
-        <%= form_for new_gift, url: gift_path(new_gift), html: {method: "patch"} do |g| %>
+        <%= form_for new_gift, url: gifts_wishlist_path(new_gift), html: {method: "patch"} do |g| %>
           <%= g.submit "Add to Wishlist", class:'card_button' %>
           <% end %>
         <% end %>

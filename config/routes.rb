@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   namespace :gifts do
-    resources :wishlist, only: [:update, :destroy]
+    resources :wishlists, only: [:update, :destroy]
   end
 
 end

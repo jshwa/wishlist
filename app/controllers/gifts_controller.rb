@@ -23,13 +23,7 @@ class GiftsController < ApplicationController
   end
 
   def update
-    if @gift.users.where(id: current_user.id).exists?
-      flash[:notice] = " #{@gift.name} is already on your wishlist"
-      redirect_to list_path(current_user.list)
-    else
-      @gift.lists.push current_user.list
-      redirect_to list_path(current_user.list)
-    end
+
   end
 
   def show
@@ -37,12 +31,7 @@ class GiftsController < ApplicationController
   end
 
   def destroy
-    if @gift.users.include?(current_user)
-      @gift.lists.delete(current_user.list)
-      redirect_to list_path(current_user.list)
-    else
-      redirect_to gift_path(@gift)
-    end
+
   end
 
   private

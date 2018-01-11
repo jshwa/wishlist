@@ -10,9 +10,7 @@
   <%= tag.div class:"gift_item" do %>
       <% if gift.users.include?(current_user) %>
         <%= tag.div class:"x" do %>
-          <%= form_for gift, method: "delete" do |g| %>
-            <%= g.submit "X", class:"delete_btn"%>
-          <% end %>
+          <%= button_to "X", gifts_wishlist_path(gift), method: "delete", class:"delete_btn" %>
         <% end %>
       <% end %>
     <%= tag.div class:"item_box" do %>

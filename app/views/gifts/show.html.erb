@@ -18,9 +18,7 @@
 
       <br><br>
       <% if @gift.users.include?(current_user) %>
-        <%= form_for @gift, method: "delete" do |g| %>
-          <%= g.submit "Remove from your Wishlist", class:"md_delete_btn" %>
-        <% end %>
+        <%= button_to "Remove from your Wishlist", gifts_wishlist_path(@gift), method: "delete", class:"md_delete_btn" %>
       <% end %>
     <% end %>
   <% end %>
