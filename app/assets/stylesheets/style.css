@@ -7,7 +7,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: right;
 }
 
 a {
@@ -46,7 +45,6 @@ h1 {
   height: 60px;
   display: grid;
   align-items: center;
-  justify-items: center;
   grid-template-columns: .5fr 1fr 9fr 2fr .5fr;
   grid-template-rows: 100%;
   grid-template-areas:
@@ -147,7 +145,7 @@ ul.nav li:first-child {
 
 /**** Welcome ****/
 
-.intro_container, .welcome_back_container {
+.intro_container {
   height: 70vh;
   max-height: 600px;
   background: url("dandelion.jpg");
@@ -166,10 +164,16 @@ ul.nav li:first-child {
 }
 
 .welcome_back_container {
-  max-height: 300px;
-  background: url("shooting_stars.png");
+  min-height: 300px;
+  max-height: 600px;
+  background: rgba(0,0,0,.8);
   background-size: 100% 100%;
-  background-position: bottom;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: helvetica;
 }
 
 /**** main ****/
@@ -190,6 +194,10 @@ ul.nav li:first-child {
 .main img {
   max-height: 160px;
   max-width: 160px;
+}
+
+.main h1 {
+  border-bottom: 1px solid #000;
 }
 
 .big_box {
@@ -755,7 +763,6 @@ p.rating {
   background: white;
   margin: 1em;
   padding: 1em;
-  justify-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -883,7 +890,7 @@ p.rating i {
 
 /***** Facebook Button ****/
 
-.social_button {
+.omni_button {
   box-sizing: border-box;
   position: relative;
   max-width: 15em;
@@ -897,7 +904,7 @@ p.rating i {
   font-size: 16px;
   color: #FFF;
 }
-.social_button:before {
+.omni_button:before {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -906,10 +913,10 @@ p.rating i {
   width: 34px;
   height: 100%;
 }
-.social_button:focus {
+.omni_button:focus {
   outline: none;
 }
-.social_button:active {
+.omni_button:active {
   box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
 }
 
@@ -931,7 +938,6 @@ p.rating i {
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
 
-
 /**** AMAZON button ****/
 .amazon_button {
   -moz-box-shadow:inset 0px 1px 0px 0px #f9eacf;
@@ -939,20 +945,8 @@ p.rating i {
   box-shadow:inset 0px 1px 0px 0px #f9eacf;
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F6DD9F), color-stop(1, #F0C24D) );
   background:-moz-linear-gradient( center top, #F6DD9F 5%, #F0C24D 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=’#F6DD9F‘, endColorstr=’#F0C24D‘);
   background-color:#f5d78a;
-  -webkit-border-top-left-radius:6px;
-  -moz-border-radius-topleft:6px;
-  border-top-left-radius:6px;
-  -webkit-border-top-right-radius:6px;
-  -moz-border-radius-topright:6px;
-  border-top-right-radius:6px;
-  -webkit-border-bottom-right-radius:6px;
-  -moz-border-radius-bottomright:6px;
-  border-bottom-right-radius:6px;
-  -webkit-border-bottom-left-radius:6px;
-  -moz-border-radius-bottomleft:6px;
-  border-bottom-left-radius:6px;
+  border-radius:6px;
   text-indent:0px;
   border:1px solid #cbaa5c;
   display:inline-block;
@@ -970,7 +964,6 @@ p.rating i {
 .amazonbutton:hover {
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #F5D589), color-stop(1, #EEBA35) );
   background:-moz-linear-gradient( center top, #F5D589 5%, #EEBA35 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=’#F5D589′, endColorstr=’#EEBA35′);
   background-color:#eeba35;
 }
 .amazonbutton:active {
