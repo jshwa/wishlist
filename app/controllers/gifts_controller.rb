@@ -32,7 +32,8 @@ class GiftsController < ApplicationController
   end
 
   def destroy
-
+    @gift.destroy
+    redirect_to list_path(current_user)
   end
 
   private

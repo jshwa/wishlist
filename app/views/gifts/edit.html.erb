@@ -1,3 +1,7 @@
 <%= tag.h1 "Edit #{@gift.name}" %>
 
 <%= render partial: 'form', locals: {gift:@gift} %>
+
+<%= tag.div class:"delete_btn_container" do %>
+  <%= button_to "Permanently Delete Gift", gift_path(@gift), method:'delete', class:'delete_gift_btn' %>
+<% end %>

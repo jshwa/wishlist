@@ -463,6 +463,25 @@ input.new_gift_btn {
   color: red;
   text-align: center;
 }
+
+.delete_btn_container {
+  width: 100%;
+  text-align: center;
+}
+
+.delete_gift_btn {
+  border: 1px solid #0F2041;
+  border-radius: 5px;
+  background: #0F2041;
+  color: #FFF;
+  font-size: 14px;
+  font-family: arial;
+  height: auto;
+  width: 400px;
+  float:center;
+  margin: 1em 2em;
+  padding: 1em;
+}
 /**** reviews  ****/
 
 .review_item {
