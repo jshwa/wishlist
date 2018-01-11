@@ -15,9 +15,8 @@ class GiftsController < ApplicationController
     @gift.created_by = current_user.id
     if @gift.save
       @gift.lists.push(current_user.list)
-      redirect_to list_path(current_user.list)
+      redirect_to gift_path(@gift)
     else
-      @category = @gift.categories.build
       render :new
     end
   end
