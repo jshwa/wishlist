@@ -6,6 +6,7 @@ class Gift < ApplicationRecord
   has_many :categories, through: :category_gifts
   has_many :reviews
   validates :name, presence: :true, uniqueness: :true
+  validates :description, presence: :true
   validates_presence_of :category_gifts
 
 
