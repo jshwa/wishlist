@@ -1,12 +1,11 @@
-
-  <div class="top_bar">
-    <div class="logo">
-      <h1><%= link_to "Wishlist!", root_path %></h1>
-    </div>
-    <div class="search">
-      <%= render 'gifts/aws_search_form' unless current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
-    </div>
-    <div class="welcome">
-      <%= link_to "Welcome #{current_user.username}", edit_user_registration_path if user_signed_in? %>
-    </div>
-  </div>
+<%= tag.div class:"top_bar" do %>
+  <%= tag.div class:"logo" do %>
+    <%= tag.h1 link_to "Wishlist!", root_path %>
+  <% end %>
+  <%= tag.div class:"search" do %>
+    <%= render 'gifts/aws_search_form' %>
+  <% end %>
+  <%= tag.div class:"welcome" do %>
+    <%= link_to "Welcome #{current_user.username}", edit_user_registration_path if user_signed_in? %>
+  <% end %>
+<% end %>

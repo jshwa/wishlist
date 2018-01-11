@@ -1,15 +1,15 @@
 <% if params[:gift_search] && params[:gift_search] != "" %>
-  <h1><%= "Results for #{params[:gift_search]}" %></h1>
+  <%= tag.h1 "Results for #{params[:gift_search]}" %>
 
-  <h2>From Other Wishlists: </h2>
+  <%= tag.h2 "From Other Wishlists:" %>
   <%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>
 
-  <h2>From Amazon: </h2>
+  <%= tag.h2 "From Amazon:" %>
   <%= render partial: 'gifts/aws_search', locals: {item: params[:gift_search]} %>
 
-  <h2>Can't find what you're looking for? <%= link_to "Add your own gift", new_gift_path %></h2>
+  <%= tag.h2 do %> Can't find what you're looking for? <%= link_to "Add your own gift", new_gift_path %><% end %>
 
 <% else %>
-  <h1>Browse Gifts: </h1>
+  <%= tag.h1 "Browse Gifts:" %>
   <%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>
 <% end %>

@@ -102,6 +102,8 @@ class Gift < ApplicationRecord
         new_gift.description = "No description"
       end
 
+      new_gift.categories.build(name: item["ItemAttributes"]["Binding"])
+
       new_gift
     end
   end

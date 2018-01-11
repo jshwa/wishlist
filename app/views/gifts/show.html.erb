@@ -1,23 +1,24 @@
-<h1><%= @gift.name.capitalize %></h1>
+<%= tag.h1 "#{@gift.name.capitalize}" %>
 
 <%= tag.div class:'gift_item' do %>
   <%= tag.div class:'item_box' do %>
     <%= tag.div class:"image_and_button" do %>
-      <%= image_tag @gift.image %> <br><br>
+      <%= image_tag @gift.image %> <%= tag.br %><%= tag.br %>
       <%= button_to "Reviews", gift_reviews_path(@gift), method: 'get', class:'item_button' %><%= tag.br %>
       <%= add_a_wishlist_button(@gift, "item") %> <%= tag.br %>
       <%= button_to "Edit this Gift", edit_gift_path(@gift), method:'get', class: "item_button" if @gift.created_by == current_user.id %>
     <% end %>
 
     <%= tag.div class:"gift_info" do %>
-      <h3>Description: </h3><%= @gift.description %> <br><br>
-        <strong>Price:</strong> <%= number_to_currency(@gift.price) %><br><br>
+      <%= tag.h3 "Description:" %><%= @gift.description %> <%= tag.br %><%= tag.br %>
+        <strong>Price:</strong> <%= number_to_currency(@gift.price) %><%= tag.br %><%= tag.br %>
         <%= link_to "See it on Amazon", @gift.url, target: "_blank", class:'amazon_button' %>
 
-      <h3>Categories: </h3>
+      <%= tag.h3 "Categories:" %>
         <%= render partial: 'categories/list_categories', collection: @gift.categories, as: :category %>
 
-      <br><br>
+      <%= tag.br %>
+      <%= tag.br %>
       <% if @gift.users.include?(current_user) %>
         <%= button_to "Remove from your Wishlist", gifts_wishlist_path(@gift), method: "delete", class:"md_delete_btn" %>
       <% end %>
