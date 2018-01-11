@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index]
   end
 
-  get 'users/edit_username', to: 'users#edit_username', as: 'edit_username'
+  get 'users/edit/username', to: 'users#edit', as: 'edit_username'
 
   resources :lists, only: [:index, :edit, :show, :update]
   resources :categories
@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   resources :gifts, only: [:index, :show, :new, :create, :update, :destroy] do
     resources :reviews
   end
+
+  namespace :gifts do
+    resources :wishlist, only: [:update, :destroy]
+  end
+
 end
