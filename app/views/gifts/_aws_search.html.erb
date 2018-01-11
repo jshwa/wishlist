@@ -1,7 +1,7 @@
 <%= tag.div class:"gift_list" do %>
-  <% Gift.amazon_search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
-    <%= tag.li do %>
-      <% unless item.is_a?(Array) %>
+  <% Amazonapi.search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
+    <% unless item.is_a?(Array) %>
+      <%= tag.li do %>
         <% new_gift = Gift.new_gift_from_amazon(item) %>
         <%= image_tag new_gift.image %> <br>
         <%= link_to shorten_name(new_gift.name), new_gift.url, target: "_blank" %>
