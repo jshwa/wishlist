@@ -1,7 +1,0 @@
-<% if current_user && current_user.gifts.include?(gift) %>
-  <%= button_to "On Your Wishlist", list_path(current_user.list), method: 'get', class: 'card_button_added'%>
-<% else %>
-  <%= form_for gift, url: gifts_wishlist_path(gift), html: {method: "patch"} do |g|  %>
-    <%= g.submit "Add to Wishlist", class:'card_button' %>
-  <% end %>
-<% end %>

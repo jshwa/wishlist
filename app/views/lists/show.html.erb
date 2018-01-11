@@ -17,7 +17,7 @@
       <%= tag.div class:"image_and_button" do %>
         <%= link_to (image_tag gift.image), gift_path(gift) %> <br><br>
         <%= button_to "Reviews", gift_reviews_path(gift), method: 'get', class:'item_button' %><%= tag.br %>
-        <%= add_a_button(gift) %>
+        <%= add_a_wishlist_button(gift, "item") %>
       <% end %>
       <%= tag.div class:"gift_info" do %>
         <%= tag.h2 link_to "#{gift.name}", gift_path(gift) %>
