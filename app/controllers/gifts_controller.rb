@@ -13,6 +13,7 @@ class GiftsController < ApplicationController
 
   def create
     @gift = Gift.new(gift_params)
+    @gift.created_by = current_user.id
     if @gift.save
       @gift.lists.push(current_user.list)
       redirect_to list_path(current_user.list)

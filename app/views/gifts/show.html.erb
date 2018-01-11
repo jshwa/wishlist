@@ -5,7 +5,8 @@
     <%= tag.div class:"image_and_button" do %>
       <%= image_tag @gift.image %> <br><br>
       <%= button_to "Reviews", gift_reviews_path(@gift), method: 'get', class:'item_button' %><%= tag.br %>
-      <%= add_a_button(@gift) %> <br><br>
+      <%= add_a_button(@gift) %> <%= tag.br %>
+      <%= button_to "Edit this Gift", edit_gift_path(@gift), method:'get', class: "item_button" if @gift.created_by == current_user.id %>
     <% end %>
 
     <%= tag.div class:"gift_info" do %>

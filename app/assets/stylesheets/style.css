@@ -518,6 +518,15 @@ p.rating {
   display: inline-block;
 }
 
+.gift_info {
+  min-width: 500px;
+}
+
+.buttons_box {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .md_delete_btn {
   border: 1px solid #0F2041;
   border-radius: 5px;

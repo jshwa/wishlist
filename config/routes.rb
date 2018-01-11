@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :lists, only: [:index, :edit, :show, :update]
   resources :categories
 
-  resources :gifts, only: [:index, :show, :new, :create, :update, :destroy] do
+  resources :gifts, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :reviews
   end
 
