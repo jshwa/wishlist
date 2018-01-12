@@ -124,3 +124,39 @@
               }
             }
           }
+
+ #<HTTParty::Response:0x7fc43e0d32e8 parsed_response={
+  "ItemSearchResponse"=>{
+    "OperationRequest"=>{
+      "HTTPHeaders"=>{
+        "Header"=>{
+          "Name"=>"UserAgent", "Value"=>"Ruby"}},
+      "RequestId"=>"51c7dea1-fd69-4f41-949b-73df458544d2",
+      "Arguments"=>{
+        "Argument"=>
+          [{"Name"=>"AWSAccessKeyId", "Value"=>"AKIAI4G46C52TJG5WRWA"},
+           {"Name"=>"AssociateTag", "Value"=>"boozeandsnark-20"},
+           {"Name"=>"Keywords", "Value"=>"gibson dg-33"},
+           {"Name"=>"Operation", "Value"=>"ItemSearch"},
+           {"Name"=>"ResponseGroup", "Value"=>"Images,ItemAttributes,Offers"},
+           {"Name"=>"SearchIndex", "Value"=>"All"},
+           {"Name"=>"Service", "Value"=>"AWSECommerceService"},
+           {"Name"=>"Timestamp", "Value"=>"2018-01-11T22:16:44Z"},
+           {"Name"=>"Signature", "Value"=>"C0zN46KPDUORFuPx+/kC5x1xD7/06l53F9hjONKfeoI="}]},
+      "RequestProcessingTime"=>"0.0187733630000000"},
+      "Items"=>{
+        "Request"=>{
+          "IsValid"=>"True",
+          "ItemSearchRequest"=>{
+            "Keywords"=>"gibson dg-33",
+            "ResponseGroup"=>["Images", "ItemAttributes", "Offers"],
+            "SearchIndex"=>"All"},
+          "Errors"=>{
+            "Error"=>{
+              "Code"=>"AWS.ECommerceService.NoExactMatches", 
+              "Message"=>"We did not find any matches for your request."}}},
+        "TotalResults"=>"0",
+        "TotalPages"=>"0", "MoreSearchResultsUrl"=>"https://www.amazon.com/gp/search?linkCode=xm2&SubscriptionId=AKIAI4G46C52TJG5WRWA&keywords=gibson%20dg-33&tag=boozeandsnark-20&creative=386001&url=search-alias%3Daws-amazon-aps&camp=2025"}}},
+  @response=#<Net::HTTPOK 200 OK readbody=true>, @headers={"date"=>["Thu, 11 Jan 2018 22:16:44 GMT"], "server"=>["Apache-Coyote/1.1"], "content-type"=>["text/xml;charset=UTF-8"], "vary"=>["Accept-Encoding,User-Agent"], "transfer-encoding"=>["chunked"]}>
+
+"ItemSearchResponse", "Items", "Request", "Errors", "Error", "Message"
