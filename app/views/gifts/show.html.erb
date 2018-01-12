@@ -3,7 +3,7 @@
 <%= tag.div class:'gift_item' do %>
   <%= tag.div class:'item_box' do %>
     <%= tag.div class:"image_and_button" do %>
-      <%= image_tag @gift.image %> <%= tag.br %><%= tag.br %>
+      <%= image_tag @gift.image %> <%= tag.br %>
       <%= button_to "Reviews", gift_reviews_path(@gift), method: 'get', class:'item_button' %><%= tag.br %>
       <%= add_a_wishlist_button(@gift, "item") %> <%= tag.br %>
       <%= button_to "Edit this Gift", edit_gift_path(@gift), method:'get', class: "item_button" if current_user && @gift.created_by == current_user.id %>

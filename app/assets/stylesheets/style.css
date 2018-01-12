@@ -254,6 +254,7 @@ ul.wishlists {
 .wishlists li img {
   height: 50px;
   width: 50px;
+  object-fit: cover;
 }
 
 .edit_wishlist_desc,
@@ -400,10 +401,13 @@ ul.wishlists {
 .image_and_button {
   width: 30%;
   padding: 1em 2em;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
 
 .image_and_button img {
-  margin: 0 30px;
+  align-items: center;
 }
 
 .category_button {
@@ -702,7 +706,7 @@ p.rating {
 
 .signup {
   height: auto;
-  width: auto;
+  width: 250px;
   background: white;
   border-radius: 5px;
   padding: 2em 3em;
@@ -810,18 +814,20 @@ p.rating {
 
 /**** Edit User ****/
 #edit_user.edit_user {
+  width: 600px;
   border: 1px solid #0F2041;
   box-shadow: 3px 3px 5px #888888;
   border-radius: 5px;
   background: white;
-  margin: 1em;
+  margin: auto;
   padding: 1em;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 1fr;
   grid-template-areas:
-      "image bio"
-      "user_info user_info";
+      "image"
+      "bio"
+      "user_info";
+  justify-items: center;
 }
 
 .image {
@@ -900,11 +906,12 @@ textarea#user_bio {
 }
 
 .cancel {
+  width: 550px;
   border: 1px solid #0F2041;
   box-shadow: 3px 3px 5px #888888;
   border-radius: 5px;
   background: white;
-  margin: 1em;
+  margin: 2em auto;
   padding: 1em 2.5em;
   text-align: center;
 }
