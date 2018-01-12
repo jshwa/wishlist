@@ -27,7 +27,7 @@ class GiftsController < ApplicationController
   end
 
   def show
-    @gift = Gift.find_by(id: params[:id]).decorate
+    @gift = Gift.find_by(id: params[:id])
   end
 
   def destroy
