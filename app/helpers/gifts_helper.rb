@@ -18,4 +18,16 @@ module GiftsHelper
     end
   end
 
+  def display_results_helper(search_term)
+    search_results = Amazonapi.search_results(search_term)
+    search_results.dig("ItemSearchResponse", "Items", "Request", "Errors", "Error", "Message") ||
+    search_results["ItemSearchResponse"]["Items"]["Item"].each do |item|
+      if item.is_a?(Array)
+        "Sorry, no results were found. Please try again."
+      else
+        new_gift = Gift.new_gift_from_amazon(item)
+          yield(new_gift)
+      end
+    end
+  end
 end

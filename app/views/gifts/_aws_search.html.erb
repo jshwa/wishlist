@@ -1,8 +1,6 @@
 <%= tag.div class:"gift_list" do %>
-  <% Amazonapi.search_results(item)["ItemSearchResponse"]["Items"]["Item"].each do |item| %>
-    <% unless item.is_a?(Array) %>
+  <% display_results_helper(search_term) do |new_gift| %>
       <%= tag.li do %>
-        <% new_gift = Gift.new_gift_from_amazon(item) %>
         <%= image_tag new_gift.image %> <br>
         <%= link_to shorten_name(new_gift.name), new_gift.url, target: "_blank" %>
         <%= link_to_if new_gift.price != nil, number_to_currency(new_gift.price), new_gift.url, target: "_blank" %>
@@ -25,4 +23,3 @@
   <% end %>
 <% end %>
   <br><br>
-<% end %>

@@ -1,11 +1,11 @@
 <% if params[:gift_search] && params[:gift_search] != "" %>
   <%= tag.h1 "Results for #{params[:gift_search]}" %>
 
-  <%= tag.h2 "From Other Wishlists:" %>
+  <%= tag.h2 "From Other Wishlists:" unless @gifts.empty? %>
   <%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>
 
   <%= tag.h2 "From Amazon:" %>
-  <%= render partial: 'gifts/aws_search', locals: {item: params[:gift_search]} %>
+  <%= render partial: 'gifts/aws_search', locals: {search_term: params[:gift_search]} %>
 
   <%= tag.h2 do %> Can't find what you're looking for? <%= link_to "Add your own gift", new_gift_path %><% end %>
 
