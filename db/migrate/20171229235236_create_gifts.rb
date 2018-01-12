@@ -6,6 +6,7 @@ class CreateGifts < ActiveRecord::Migration[5.1]
       t.string :description
       t.decimal :price, precision: 8, scale: 2
       t.string :image
+      t.integer :created_by
       t.datetime :created_at
       t.datetime :updated_at
 
