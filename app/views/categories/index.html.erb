@@ -4,14 +4,7 @@
   <% if c.gifts.count != 0 %>
     <%= tag.div class:"big_box category_index"  do %>
       <%= tag.h2 link_to "#{c.name}", category_path(c) %>
-      <%= tag.h3 "Wishlists" %>
-      <%= tag.ul class:"wishlists" do %>
-        <% category_top_users(c).each do |user| %>
-          <%= tag.li do %>
-            <%= link_to (image_tag user.image), list_path(user.list) if user %>
-          <% end %>
-        <% end %>
-      <% end %>
+      <%= render partial: 'categories/list_wishlists', locals: {category: c} %>
       <%= tag.h3 "Gifts" %>
       <%= render partial: 'gifts/gift_list', locals: {gifts: c.gifts.first(3)} %>
       <%= link_to "See More", category_path(c), class:'see_more' if c.gifts.length > 3 %>

@@ -619,6 +619,17 @@ p.rating {
   font-family: arial;
 }
 
+.category_show {
+  width: 740px;
+  margin: 2em auto;
+  border: 0;
+}
+
+.category_show h3 {
+  margin: 0 0 1em;
+  font-size: 24px;
+}
+
 
 /**** login ****/
 

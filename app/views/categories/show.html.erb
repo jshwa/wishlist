@@ -1,3 +1,5 @@
 <h1>Category: <%= @category.name %></h1>
-
+<%= tag.div class:"big_box category_show" do %>
+  <%= render partial: 'categories/list_wishlists', locals: {category: @category} %>
+<% end %>
 <%= render partial: 'gifts/gift_list', locals: {gifts: @category.gifts} %>

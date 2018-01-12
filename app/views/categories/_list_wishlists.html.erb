@@ -1,0 +1,8 @@
+<%= tag.h3 "Wishlists" %>
+<%= tag.ul class:"wishlists" do %>
+  <% category_top_users(category).each do |user| %>
+    <%= tag.li do %>
+      <%= link_to (image_tag user.image), list_path(user.list) if user %>
+    <% end %>
+  <% end %>
+<% end %>
