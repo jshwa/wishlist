@@ -27,8 +27,16 @@ class Gift < ApplicationRecord
     end
   end
 
+  def self.most_reviewed_gift
+    joins(:reviews).group("gift_id").order("COUNT(gift_id) DESC")
+  end
+
+  def self.by_most_stars
+    joins(:reviews).group("gift_id").order("SUM(stars) DESC")
+  end
+
   def self.new_gift_from_amazon(item)
-    new_gift = where(url: item["DetailPageURL"]).first_or_initialize
+    new_gift = where(name: item["ItemAttributes"]["Title"]).first_or_initialize
     if item.dig("MediumImage")
       new_gift.image = item.dig("MediumImage", "URL")
     elsif item.dig("ImageSets", "ImageSet", 0)

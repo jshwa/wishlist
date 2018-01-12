@@ -12,4 +12,5 @@
 <%= tag.br %>
 
 <%= tag.h1 "Or Browse Gifts" %>
-<%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>
+<%= render partial: 'gifts/gift_list', locals: {gifts: Gift.most_reviewed_gift.by_most_stars} %>
+<%= button_to "See More", gifts_path, method:'get', class:"see_more_btn" %>
