@@ -2,6 +2,7 @@ class User < ApplicationRecord
 
   has_one :list
   has_many :gifts, through: :list
+  has_many :categories, through: :gifts
   has_many :reviews
 
   validates :username, :presence => true, :uniqueness => {
@@ -47,5 +48,9 @@ class User < ApplicationRecord
     id = gift.reviews.where(user: self).pluck(:id)
     review = Review.find_by(id: id)
     review == [] ? false : review
+  end
+
+  def most_popular_categories
+    self.categories.group("category_id").order("COUNT(category_id) DESC").limit(3)
   end
 end
