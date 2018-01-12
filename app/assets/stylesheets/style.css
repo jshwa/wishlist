@@ -365,6 +365,18 @@ ul.wishlists {
   background: #0F2041;
 }
 
+.see_more_btn {
+  display: block;
+  width: 74%;
+  background: #36f;
+  color: white;
+  margin: 12px auto;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
 .gift_item {
   border: 1px solid #0F2041;
   box-shadow: 3px 3px 5px #888888;
