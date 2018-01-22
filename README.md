@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Application Description
 
-Things you may want to cover:
+Wishlist is a web application that manages users' wishlists, the gifts that make up wishlists and users' reviews of those gifts. It incorporates search functionality from the Amazon API to retrieve gifts and save them to the database.
 
-* Ruby version
+## Installation
 
-* System dependencies
+Download the repo, cd into the directory then run the migrations
 
-* Configuration
+```ruby
+rake db:migrate
+```
 
-* Database creation
+And start a rails server:
 
-* Database initialization
+    $ rails s
 
-* How to run the test suite
+## Contributions
 
-* Services (job queues, cache servers, search engines, etc.)
+What to contribute? Great. File an issue with a pull-request for your fix or feature.
 
-* Deployment instructions
+## Licensing
 
-* ...
+Please see [LICENSE](https://www.github.com/jshwa/wishlist/blob/master/LICENSE)
