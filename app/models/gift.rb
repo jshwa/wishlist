@@ -13,7 +13,6 @@ class Gift < ApplicationRecord
     categories_attributes.values.each do |category_attr|
       if category_attr[:name] != ""
         category = Category.find_or_create_by(name: category_attr[:name])
-        category.name = "Uncategorized" if category.name == ""
         self.categories << category
       end
     end
