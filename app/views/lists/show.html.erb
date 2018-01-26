@@ -16,7 +16,10 @@
     <%= tag.div class:"item_box" do %>
       <%= tag.div class:"image_and_button" do %>
         <%= link_to (image_tag gift.image), gift_path(gift) %> <br><br>
-        <%= button_to "Reviews", gift_reviews_path(gift), method: 'get', class:'item_button' %><%= tag.br %>
+        <form class="js-list-review-btn" data-id="<%= gift.id %>" method="get" action="<%= gift_reviews_path(gift) %>">
+          <input class="item_button" type="submit" value="Reviews">
+        </form>
+        <%= tag.br %>
         <%= add_a_wishlist_button(gift, "item") %>
       <% end %>
       <%= tag.div class:"gift_info" do %>
@@ -24,6 +27,8 @@
         <%= tag.h3 "Description:" %><%= gift.description %> <br><br>
         <strong>Price:</strong> <%= number_to_currency(gift.price) %><br><br>
       <% end %>
+    <% end %>
+    <%= tag.div id:"gift-#{gift.id}-reviews" do %>
     <% end %>
   <% end %>
 <% end %>
