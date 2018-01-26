@@ -53,7 +53,13 @@ group :development do
 end
 
 gem 'devise'
+
 gem 'omniauth-facebook'
+
 gem 'httparty'
+
 gem 'draper'
+
 gem 'active_model_serializers', '0.10.6'
+
+gem 'jquery-rails'
