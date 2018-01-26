@@ -10,6 +10,10 @@ class ReviewsController < ApplicationController
     @user = params[:user_id] ? User.find_by(id: params[:user_id]) : nil
     if obj = @user || @gift
       @reviews = obj.reviews.decorate
+      respond_to do |format|
+        format.html
+        format.json { render json: @reviews, each_serializer: ReviewSerializer }
+      end
     else
       redirect_to root_path, alert: 'Page not found'
     end
