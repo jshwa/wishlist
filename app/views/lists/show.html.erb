@@ -28,15 +28,18 @@
         <strong>Price:</strong> <%= number_to_currency(gift.price) %><br><br>
       <% end %>
     <% end %>
-    <%= tag.div id:"gift-#{gift.id}-reviews" do %>
+    <%= tag.div id:"gift-#{gift.id}-reviews", class:"wishlist-gift-reviews" do %>
     <% end %>
   <% end %>
 <% end %>
 
 <script id="wishlist-reviews-template" type="text/x-handlebars-template">
+  {{#each reviews}}
   <div class="gift-review">
-    <strong>{{user.username}}</strong> on {{updated_at}} <br>
+    <strong>{{user.username}}</strong> on {{formatDate updated_at day="numeric" month="long" year="numeric"}} <br>
     <p class="rating">Rating: {{stars}} </p> <br><br>
     <p> Review: {{comment}} </p>
+    <br>
   </div>
+  {{/each}}
 </script>

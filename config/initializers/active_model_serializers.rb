@@ -1,3 +1,3 @@
 ActiveModelSerializers.config.tap do |c|
-  c.adapter = :attributes
+  c.adapter = :json
 end
