@@ -13,8 +13,7 @@ function listReviews() {
 
   $('.js-wishlist-review-btn').on('click', function(e){
     e.preventDefault();
-    var id = this.dataset.id;
-    var reviewsDiv = $(`#gift-${id}-reviews`);
+    var reviewsDiv = $(`#gift-${this.dataset.id}-reviews`);
     if ($('.reviews_title', reviewsDiv).length === 0){
       $.getJSON(this.action).done(function(reviews){
         reviewsDiv.append('<h2 class="reviews_title"> Reviews: </h2>');
@@ -29,6 +28,23 @@ function listReviews() {
   });
 }
 
+function removeGift() {
+  $('.js-remove-btn').on('submit', function(e){
+    e.preventDefault();
+    var giftDiv = $(`#gift-${this.dataset.id}`);
+    $.ajax({
+      url: this.action,
+      method: "DELETE",
+      data: $(this).serialize(),
+      dataType: "json"
+    }).done(function(msg){
+      giftDiv.slideUp(function(){
+        giftDiv.remove()});
+    });
+  });
+}
+
 $(function(){
   listReviews();
+  removeGift();
 })
