@@ -15,7 +15,10 @@ class Gifts::WishlistsController < ApplicationController
   def destroy
     if @gift.users.include?(current_user)
       @gift.lists.delete(current_user.list)
-      redirect_to list_path(current_user.list)
+      respond_to do |format|
+        format.html {redirect_to list_path(current_user.list)}
+        format.json {head 204}
+      end
     else
       redirect_to gift_path(@gift)
     end
