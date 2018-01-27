@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
       @reviews = obj.reviews.decorate
       respond_to do |format|
         format.html
-        format.json { render json: @reviews, each_serializer: ReviewSerializer }
+        format.json { render json: @reviews, each_serializer: ReviewSerializer, include: ['user'] }
       end
     else
       redirect_to root_path, alert: 'Page not found'
