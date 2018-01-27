@@ -1,15 +1,24 @@
+HandlebarsIntl.registerWith(Handlebars);
+
 function attachReviewListeners() {
+  var source = $('#wishlist-reviews-template').html();
+  var template = Handlebars.compile(source);
+
   $('.js-wishlist-review-btn').on('click', function(e){
     e.preventDefault();
-    var id = $(this).attr('data-id');
-    var source = $('#wishlist-reviews-template').html();
-    var template = Handlebars.compile(source);
-    $(`#gift-${id}-reviews`).append('<h2 class="reviews_title"> Reviews: </h2>');
-    $.getJSON(this.action).done(function(response){
-      $.each(response, function(index, review){
-        $(`#gift-${id}-reviews`).append(template(review))
-      });
-    });
+    var id = this.dataset.id;
+    var reviewsDiv = $(`#gift-${id}-reviews`);
+    if ($('.reviews_title', reviewsDiv).length === 0){
+      $.getJSON(this.action).done(function(reviews){
+        reviewsDiv.append('<h2 class="reviews_title"> Reviews: </h2>');
+        if (!reviews[""]) {
+          reviewsDiv.append(template(reviews)).slideDown();
+        } else {
+          reviewsDiv.append("Nothing here...").slideDown();
+        }
+      })} else {
+        reviewsDiv.slideUp().empty();
+      };
   });
 }
 
