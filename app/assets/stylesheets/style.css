@@ -290,6 +290,15 @@ ul.wishlists {
   font-family: arial;
 }
 
+.wishlist-gift-reviews {
+  margin: 2em;
+  display: none;
+}
+
+.wishlist-gift-reviews h2 {
+  border-bottom: 1px solid #888;
+}
+
 /**** gifts  ****/
 
 .gift_list {
