@@ -16,7 +16,7 @@
     <%= tag.div class:"item_box" do %>
       <%= tag.div class:"image_and_button" do %>
         <%= link_to (image_tag gift.image), gift_path(gift) %> <br><br>
-        <form class="js-list-review-btn" data-id="<%= gift.id %>" method="get" action="<%= gift_reviews_path(gift) %>">
+        <form class="js-wishlist-review-btn" data-id="<%= gift.id %>" method="get" action="<%= gift_reviews_path(gift) %>">
           <input class="item_button" type="submit" value="Reviews">
         </form>
         <%= tag.br %>
@@ -32,3 +32,11 @@
     <% end %>
   <% end %>
 <% end %>
+
+<script id="wishlist-reviews-template" type="text/x-handlebars-template">
+  <div class="gift-review">
+    <strong>{{user.username}}</strong> on {{updated_at}} <br>
+    <p class="rating">Rating: {{stars}} </p> <br><br>
+    <p> Review: {{comment}} </p>
+  </div>
+</script>
