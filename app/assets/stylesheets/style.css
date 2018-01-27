@@ -296,7 +296,13 @@ ul.wishlists {
 }
 
 .wishlist-gift-reviews h2 {
-  border-bottom: 1px solid #888;
+  margin-bottom: .5em;
+}
+
+.gift-review {
+  padding-top: 1.5em;
+  margin-bottom: 0;
+  border-top: 1px solid #888;
 }
 
 /**** gifts  ****/
@@ -399,7 +405,7 @@ ul.wishlists {
 .item_box {
   width: 100%;
   margin: 0;
-  padding: 0 10px 0 0;
+  padding: 0 10px 20px 0;
   display: flex;
   align-items: center;
 }

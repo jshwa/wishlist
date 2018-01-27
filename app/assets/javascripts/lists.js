@@ -1,6 +1,13 @@
 HandlebarsIntl.registerWith(Handlebars);
+Handlebars.registerHelper('display_rating', function(stars) {
+  var rating = ""
+  for (let i = 0; i < stars; i++) {
+    rating += "<i class='fa fa-star' aria-hidden='true'></i>"
+  }
+  return rating
+})
 
-function attachReviewListeners() {
+function listReviews() {
   var source = $('#wishlist-reviews-template').html();
   var template = Handlebars.compile(source);
 
@@ -23,5 +30,5 @@ function attachReviewListeners() {
 }
 
 $(function(){
-  attachReviewListeners();
+  listReviews();
 })
