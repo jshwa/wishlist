@@ -7,7 +7,7 @@
   <%= tag.h2 "From Amazon:" %>
   <%= render partial: 'gifts/aws_search', locals: {search_term: params[:gift_search]} %>
 
-  <%= tag.h2 do %> Can't find what you're looking for? <%= link_to "Add your own gift", new_gift_path %><% end %>
+  <%= tag.h2 do %> Can't find what you're looking for? <%= link_to "Add your own gift", new_gift_path, id:"new-gift" %><% end %>
 
 <% else %>
   <%= tag.h1 "Browse Gifts:" %>
