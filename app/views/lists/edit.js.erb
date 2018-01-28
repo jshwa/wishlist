@@ -1,26 +1,41 @@
 var html = "<%= j render partial: 'lists/form', locals: {list: @list} %>"
-var descDiv = $('.wishlist_desc')
 var id = <%= current_user.id %>
+var descDiv = $('.wishlist_desc')
+var welcomeDiv = $('.welcome_back')
 
-descDiv.slideUp(function(){
-  $('#about-wishlist').after(html);
-  $('.edit_wishlist_desc').hide().slideDown();
-})
+function displayEditForm(){
+  descDiv.slideUp(function(){
+    $('#about-wishlist').after(html);
+    $('.edit_wishlist_desc').hide().slideDown();
+  });
 
-$(document).on('submit', `#edit_list_${id}`, function(e) {
-  e.preventDefault();
-  var editDiv = $('.edit_wishlist_desc')
-  $.ajax({
-    url: this.action,
-    method: "PATCH",
-    data: $(this).serialize(),
-    dataType: "json"
-  }).done(function(resp){
-    descDiv.find('#p-desc').text(resp.list.description)
-    descDiv.slideDown();
-    editDiv.slideUp(function(){
+  welcomeDiv.slideUp(function(){
+    welcomeDiv.html(html).slideDown();
+  });
+  updateDescription();
+}
+
+function updateDescription() {
+  $(document).on('submit', `#edit_list_${id}`, function(e) {
+    e.preventDefault();
+    var editDiv = $('.edit_wishlist_desc')
+    $.ajax({
+      url: this.action,
+      method: "PATCH",
+      data: $(this).serialize(),
+      dataType: "json"
+    }).done(function(resp){
+      descDiv.find('#p-desc').text(resp.list.description)
+      descDiv.slideDown();
+      welcomeDiv.html("<h1>Ooh. Very Nice. We'll put that up immediately on your Wishlist.</h1>")
+      welcomeDiv.slideDown();
+      editDiv.slideUp(function(){
       editDiv.remove();
+      });  
     });
-  }).fail(function(resp){
-  })
-});
+  });
+}
+
+$(function(){
+  displayEditForm()
+})

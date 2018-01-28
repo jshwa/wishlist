@@ -13,7 +13,7 @@
       <%= tag.h1 "Welcome Back #{current_user.username.humanize}" %>
       <%= tag.h3 "Don't forget to write your wishlist description." %>
       <%= tag.h3 "Tell us what kinds of gifts you find most interesting!" %>
-      <%= button_to "Start Writing", edit_list_path(current_user.list), method:'get', class:'welcome_btn' %>
+      <%= button_to "Start Writing", edit_list_path(current_user.list), method:'get', class:'welcome_btn', form_class: 'js-welcome-btn' %>
     <% end %>
   <% end %>
 <% end %>
