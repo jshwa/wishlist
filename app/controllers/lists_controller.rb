@@ -10,7 +10,6 @@ class ListsController < ApplicationController
   def edit
     if @list
       if @list.user == current_user
-        render :edit
       else
         redirect_to list_path(current_user.list)
       end
@@ -22,7 +21,10 @@ class ListsController < ApplicationController
   def update
     if @list.user == current_user
       @list.update(list_params)
-      redirect_to list_path(@list)
+      respond_to do |format|
+        format.html {redirect_to list_path(@list)}
+        format.js { render json: @list}
+      end
     else
       redirect_to list_path(current_user.list)
     end
