@@ -19,7 +19,10 @@ class GiftsController < ApplicationController
     @gift.created_by = current_user.id
     if @gift.save
       @gift.lists.push(current_user.list)
-      redirect_to gift_path(@gift)
+      respond_to do |format|
+        format.html {redirect_to gift_path(@gift)}
+        format.json {render json: @gift}
+      end
     else
       render :new
     end
