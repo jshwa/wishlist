@@ -23,7 +23,7 @@ class ListsController < ApplicationController
       @list.update(list_params)
       respond_to do |format|
         format.html {redirect_to list_path(@list)}
-        format.js { render json: @list}
+        format.json { render json: @list}
       end
     else
       redirect_to list_path(current_user.list)
