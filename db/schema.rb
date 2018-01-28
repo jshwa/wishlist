@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103212413) do
+ActiveRecord::Schema.define(version: 20180128210342) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 20180103212413) do
 
   create_table "gifts", force: :cascade do |t|
     t.string "name"
-    t.string "url", default: "default_gift.jpg"
+    t.string "url"
     t.string "description"
     t.decimal "price", precision: 8, scale: 2
-    t.string "image"
+    t.string "image", default: "default_gift.jpg"
     t.integer "created_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
