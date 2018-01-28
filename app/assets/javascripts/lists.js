@@ -50,8 +50,16 @@ function editWishlistDesc() {
   })
 }
 
+function startWriting() {
+  $(document).on('submit', '.js-welcome-btn', function(e) {
+    e.preventDefault();
+    $.getScript(this.action)
+  })
+}
+
 $(function(){
   listReviews();
   removeGift();
   editWishlistDesc();
+  startWriting();
 })
