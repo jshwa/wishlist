@@ -8,11 +8,10 @@ Handlebars.registerHelper('display_rating', function(stars) {
 })
 
 function listReviews() {
-  var source = $('#wishlist-reviews-template').html();
-  var template = Handlebars.compile(source);
-
   $('.js-wishlist-review-btn').on('click', function(e){
     e.preventDefault();
+    var source = $('#wishlist-reviews-template').html();
+    var template = Handlebars.compile(source);
     var reviewsDiv = $(`#gift-${this.dataset.id}-reviews`);
     if ($('.reviews_title', reviewsDiv).length === 0){
       $.getJSON(this.action).done(function(reviews){
@@ -44,7 +43,15 @@ function removeGift() {
   });
 }
 
+function editWishlistDesc() {
+  $('#js-edit-btn').on('click', function(e){
+    e.preventDefault();
+    $.getScript($(this).attr('href'))
+  })
+}
+
 $(function(){
   listReviews();
   removeGift();
+  editWishlistDesc();
 })
