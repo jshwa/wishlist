@@ -8,7 +8,7 @@ Handlebars.registerHelper('display_rating', function(stars) {
 })
 
 function listReviews() {
-  $('.js-wishlist-review-btn').on('click', function(e){
+  $(document).on('click','.js-wishlist-review-btn', function(e){
     e.preventDefault();
     var source = $('#wishlist-reviews-template').html();
     var template = Handlebars.compile(source);
@@ -28,7 +28,7 @@ function listReviews() {
 }
 
 function removeGift() {
-  $('.js-remove-btn').on('submit', function(e){
+  $(document).on('submit','.js-remove-btn', function(e){
     e.preventDefault();
     var giftDiv = $(`#gift-${this.dataset.id}`);
     $.ajax({
@@ -44,7 +44,7 @@ function removeGift() {
 }
 
 function editWishlistDesc() {
-  $('#js-edit-btn').on('click', function(e){
+  $(document).on('click', '#js-edit-btn', function(e){
     e.preventDefault();
     $.getScript($(this).attr('href'))
   })
