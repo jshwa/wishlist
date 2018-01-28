@@ -1,9 +1,2 @@
 <%= tag.h1 "Edit Your Wishlist Description" %>
-
-<%= tag.div class:"big_box edit_wishlist_desc" do %>
-  <% form_for @list do |l| %>
-  <%= l.label "Tell us about your wishlist:" %><%= tag.br %>
-  <%= l.text_area "description" %><%= tag.br %>
-  <%= l.submit %>
-  <% end %>
-<% end %>
+  <%= render partial: 'form', locals: {list: @list} %>
