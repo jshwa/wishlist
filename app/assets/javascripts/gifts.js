@@ -8,7 +8,7 @@ function addGiftForm() {
 function createGift(){
   $(document).on('submit', 'form#new_gift', function(e) {
     e.preventDefault();
-    $.post(this.action, $(this).serialize(), displayNewGift, 'json')
+    $.post(this.action, $(this).serialize(), displayNewGift, 'json');
   })
 }
 
@@ -35,6 +35,7 @@ function displayNewGift(json) {
   var gift = new Gift(json.gift);
   var giftCard = gift.renderCard();
   $('.gift_list').append(giftCard);
+  $('.new_gift_container').slideUp().remove();
 }
 
 $(function(){
