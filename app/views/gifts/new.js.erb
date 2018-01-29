@@ -1,3 +1,6 @@
 var html = "<%= j render partial: 'form', locals: {gift: @gift} %>"
 
-$('.main').append(html)
+if ($('.new_gift_container').length === 0) {
+  $('.main').append(html);
+}
+$(document).scrollTop($('.new_gift_form').offset().top - 80);
