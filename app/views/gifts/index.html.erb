@@ -16,9 +16,9 @@
 
 <script id="gift-card-template" type="text/x-handlebars-template">
   <li>
-    <a href="gifts/{{id}}"><img src="{{image}}"></a> <br>
+    <a href="gifts/{{id}}"><img src="assets/{{image}}"></a> <br>
     <a target="_blank" href="gifts/{{id}}">{{name}}</a>
-    <a target="_blank" href="gifts/{{id}}">{{price}}</a>
+    <a target="_blank" href="gifts/{{id}}">${{price}}</a>
     <form class="button_to" method="get" action="/lists/{{id}}">
       <input class="card_button_added" type="submit" value="On Your Wishlist">
     </form>
