@@ -15,12 +15,7 @@ function listReviews() {
     var reviewsDiv = $(`#gift-${this.dataset.id}-reviews`);
     if ($('.reviews_title', reviewsDiv).length === 0){
       $.getJSON(this.action).done(function(reviews){
-        reviewsDiv.append('<h2 class="reviews_title"> Reviews: </h2>');
-        if (!reviews[""]) {
-          reviewsDiv.append(template(reviews)).slideDown();
-        } else {
-          reviewsDiv.append("Nothing here...").slideDown();
-        }
+        reviewsDiv.append(template(reviews)).slideDown();
       })} else {
         reviewsDiv.slideUp().empty();
       };

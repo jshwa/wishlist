@@ -38,12 +38,17 @@
 <% end %>
 
 <script id="wishlist-reviews-template" type="text/x-handlebars-template">
-  {{#each reviews}}
-  <div class="gift-review">
-    <strong>{{user.username}}</strong> on {{formatDate updated_at day="numeric" month="long" year="numeric"}} <br>
-    <p class="rating">Rating: {{{display_rating stars}}} </p> <br><br>
-    <p> Review: {{comment}} </p>
-    <br>
-  </div>
-  {{/each}}
+  <h2 class="reviews_title"> Reviews: </h2>
+  {{#if reviews}}
+    {{#each reviews}}
+    <div class="gift-review">
+      <strong>{{user.username}}</strong> on {{formatDate updated_at day="numeric" month="long" year="numeric"}} <br>
+      <p class="rating">Rating: {{{display_rating stars}}} </p> <br><br>
+      <p> Review: {{comment}} </p>
+      <br>
+    </div>
+    {{/each}}
+  {{else}}
+    <p> Nobody's written anything yet.</p>
+  {{/if}}
 </script>
