@@ -1,9 +1,13 @@
+<%= content_for :sidebar do %>
+  <%= tag.div class:'category_list' do %>
+    <% @categories.each do |category| %>
+      <%= link_to category.name, category_path(category), class:"category-link" %>
+    <% end %>
+  <% end %>
+<% end %>
+
 <%= tag.div id:'show-category' do %>
   <h1>Category: <%= @category.name %></h1>
-
-  <% @categories.each do |category| %>
-    <%= link_to category.name, category_path(category), class:"category-link" %>
-  <% end %>
 
   <%= tag.div class:"big_box category_show" do %>
     <%= render partial: 'categories/list_wishlists', locals: {category: @category} %>
@@ -14,9 +18,6 @@
 
 <script id="category-template" type="text/x-handlebars-template">
   <h1>Category: {{category.name}}</h1>
-  <% @categories.each do |category| %>
-    <%= link_to category.name, category_path(category), class:"category-link" %>
-  <% end %>
   <div class="big_box category_show">
     <h3>Wishlists</h3>
     <ul class="wishlists">

@@ -16,6 +16,9 @@
     <%= render 'layouts/welcome' if current_page?(root_path) %>
 
     <div class="wrapper">
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
       <div class="main">
         <%= show_errors %>
         <%= yield %>

@@ -196,10 +196,10 @@ ul.nav li:first-child {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-columns: .3fr .7fr 10fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
-    ". main .";
+    ". sidebar main .";
 }
 
 .main {
@@ -223,6 +223,10 @@ ul.nav li:first-child {
   background: white;
   margin: 1em;
   padding: 1em;
+}
+
+#sidebar {
+  grid-area: sidebar;
 }
 
 /**** Errors ****/
@@ -649,7 +653,9 @@ p.rating {
   font-size: 24px;
 }
 
-
+.category_list {
+  margin: 10em 0;
+}
 /**** login ****/
 
 .login_wrapper {
