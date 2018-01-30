@@ -1,5 +1,43 @@
-<h1>Category: <%= @category.name %></h1>
-<%= tag.div class:"big_box category_show" do %>
-  <%= render partial: 'categories/list_wishlists', locals: {category: @category} %>
+<%= tag.div id:'show-category' do %>
+  <h1>Category: <%= @category.name %></h1>
+
+  <% @categories.each do |category| %>
+    <%= link_to category.name, category_path(category), class:"category-link" %>
+  <% end %>
+
+  <%= tag.div class:"big_box category_show" do %>
+    <%= render partial: 'categories/list_wishlists', locals: {category: @category} %>
+  <% end %>
+
+  <%= render partial: 'gifts/gift_list', locals: {gifts: @category.gifts} %>
 <% end %>
-<%= render partial: 'gifts/gift_list', locals: {gifts: @category.gifts} %>
+
+<script id="category-template" type="text/x-handlebars-template">
+  <h1>Category: {{category.name}}</h1>
+
+  <% @categories.each do |category| %>
+    <%= link_to category.name, category_path(category), class:"category-link" %>
+  <% end %>
+
+<div class="big_box category_show">
+  <h3>Wishlists</h3>
+  <ul class="wishlists">
+    {{#each category.users}}
+      <li>
+        <a href="/lists/{{id}}"><img src="{{image}}"></a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<div class="gift_list">
+    {{#each category.gifts}}
+    <li><a href="/gifts/{{id}}"><img src="{{image}}"></a>
+        <h4><a href="/gifts/{{id}}">{{name}}</a></h4>
+        <p></p>
+
+        <p></p>
+    </li>
+    {{/each}}
+</div>
+</script>
