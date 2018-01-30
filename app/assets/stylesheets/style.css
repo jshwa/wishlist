@@ -245,6 +245,13 @@ ul.nav li:first-child {
   font-style: bold;
 }
 
+a.category-letter {
+  color: #888;
+}
+
+.side_list:hover a.category-letter {
+  color: #000;
+}
 
 .category_list {
   width: 100%;
@@ -260,8 +267,10 @@ ul.nav li:first-child {
   font-size: 16px;
 }
 
-.side_list:hover .category-link  {
+.side_list:hover .category-link,
+.side_list:hover .category-name  {
   display: block;
+  color: #000;
 }
 
 /**** Errors ****/
