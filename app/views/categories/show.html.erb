@@ -14,30 +14,37 @@
 
 <script id="category-template" type="text/x-handlebars-template">
   <h1>Category: {{category.name}}</h1>
-
   <% @categories.each do |category| %>
     <%= link_to category.name, category_path(category), class:"category-link" %>
   <% end %>
-
-<div class="big_box category_show">
-  <h3>Wishlists</h3>
-  <ul class="wishlists">
-    {{#each category.users}}
-      <li>
-        <a href="/lists/{{id}}"><img src="{{image}}"></a>
+  <div class="big_box category_show">
+    <h3>Wishlists</h3>
+    <ul class="wishlists">
+      {{#each category.users}}
+        <li>
+          <a href="/lists/{{id}}"><img src="{{image}}"></a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="gift_list">
+      {{#each category.gifts}}
+      <li><a href="/gifts/{{id}}"><img src="{{image}}"></a>
+          <h4><a href="/gifts/{{id}}">{{name}}</a></h4>
+          <p></p>
+          {{#if on_list}}
+            <form class="button_to" method="get" action="/lists/<%= current_user.id %>">
+              <input class="card_button_added" type="submit" value="On Your Wishlist">
+            </form>
+          {{else}}
+            <form class="button_to" method="post" action="/gifts/wishlists/{{id}}">
+              <input type="hidden" name="_method" value="patch">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input class="card_button" type="submit" value="Add to Wishlist">
+            </form>
+          {{/if}}
+          <p></p>
       </li>
-    {{/each}}
-  </ul>
-</div>
-
-<div class="gift_list">
-    {{#each category.gifts}}
-    <li><a href="/gifts/{{id}}"><img src="{{image}}"></a>
-        <h4><a href="/gifts/{{id}}">{{name}}</a></h4>
-        <p></p>
-
-        <p></p>
-    </li>
-    {{/each}}
-</div>
+      {{/each}}
+  </div>
 </script>
