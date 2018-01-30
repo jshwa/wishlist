@@ -1,8 +1,7 @@
 <%= content_for :sidebar do %>
   <%= tag.div class:'category_list' do %>
-    <% @categories.each do |category| %>
-      <%= link_to category.name, category_path(category), class:"category-link" %>
-    <% end %>
+    <%= display_side_az_list %>
+
   <% end %>
 <% end %>
 
