@@ -9,7 +9,6 @@ function showCategory() {
   })
 }
 
-
 $(function(){
   showCategory();
 })

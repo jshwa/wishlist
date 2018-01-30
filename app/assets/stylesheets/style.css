@@ -227,6 +227,28 @@ ul.nav li:first-child {
 
 #sidebar {
   grid-area: sidebar;
+  position: relative;
+}
+
+.side_list {
+  font-family: verdana;
+  text-align: center;
+  cursor: default;
+  transition: all .5s;
+}
+
+.side_list:hover {
+  margin: .5em 0;
+  padding: .25em;
+  font-size: 24px;
+  font-style: bold;
+}
+
+
+.category_list {
+  margin: 10em 0;
+  position: absolute;
+  z-index: 100;
 }
 
 /**** Errors ****/
@@ -653,9 +675,6 @@ p.rating {
   font-size: 24px;
 }
 
-.category_list {
-  margin: 10em 0;
-}
 /**** login ****/
 
 .login_wrapper {
