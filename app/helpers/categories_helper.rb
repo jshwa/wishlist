@@ -12,7 +12,10 @@ module CategoriesHelper
           l = list_links[letter].collect do |link|
             link[1]
           end
-          l[0]
+          link_div = tag.div class:"category-link" do
+            l.join.html_safe
+          end
+          (link_to letter, '#', class:"category-letter")  + link_div
         end
       end
     end
@@ -24,14 +27,14 @@ module CategoriesHelper
     @categories.each do |category|
       if links[category.name.slice(0)].blank?
         links[category.name.slice(0)] = Hash.new
-        links[category.name.slice(0)][0] = link_to category.name, category_path(category), class:"category-link"
+        links[category.name.slice(0)][0] = tag.li {link_to category.name, category_path(category), class:"category-name"}
       else
         num = 0
         while links[category.name.slice(0)][num] != nil do
           num += 1
         end
         links[category.name.slice(0)][num] = Hash.new
-        links[category.name.slice(0)][num] = link_to category.name, category_path(category), class:"category-link"
+        links[category.name.slice(0)][num] = tag.li {link_to category.name, category_path(category), class:"category-name"}
       end
     end
     links

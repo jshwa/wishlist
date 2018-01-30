@@ -234,21 +234,34 @@ ul.nav li:first-child {
   font-family: verdana;
   text-align: center;
   cursor: default;
+  font-size: 20px;
   transition: all .5s;
 }
 
 .side_list:hover {
   margin: .5em 0;
   padding: .25em;
-  font-size: 24px;
+  font-size: 32px;
   font-style: bold;
 }
 
 
 .category_list {
+  width: 100%;
+  text-align: center;
+  list-style: none;
   margin: 10em 0;
   position: absolute;
   z-index: 100;
+}
+
+.category-link {
+  display: none;
+  font-size: 16px;
+}
+
+.side_list:hover .category-link  {
+  display: block;
 }
 
 /**** Errors ****/

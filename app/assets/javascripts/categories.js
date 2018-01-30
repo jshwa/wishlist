@@ -1,5 +1,5 @@
 function showCategory() {
-  $(document).on('click', '.category-link', function(e) {
+  $(document).on('click', '.category-name', function(e) {
     e.preventDefault();
     var source = $('#category-template').html();
     var template = Handlebars.compile(source);
