@@ -1,7 +1,7 @@
 <% if params[:gift_search] && params[:gift_search] != "" %>
   <%= tag.h1 "Results for #{params[:gift_search]}" %>
 
-  <%= tag.h2 "From Other Wishlists:" unless @gifts.empty? %>
+  <%= tag.h2 "From Other Gift Guides:" unless @gifts.empty? %>
   <%= render partial: 'gifts/gift_list', locals: {gifts: @gifts} %>
 
   <%= tag.h2 "From Amazon:" %>

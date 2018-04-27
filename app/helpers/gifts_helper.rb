@@ -12,9 +12,9 @@ module GiftsHelper
 
   def add_a_wishlist_button(gift, button)
     if gift.persisted? && current_user && current_user.gifts.include?(gift)
-      button_to "On Your Wishlist", list_path(current_user.list), method: 'get', class: "#{button}_button_added"
+      button_to "On Your Gift Guide", list_path(current_user.list), method: 'get', class: "#{button}_button_added"
     elsif gift.persisted?
-      button_to "Add to Wishlist", gifts_wishlist_path(gift), method:'patch', class:"#{button}_button"
+      button_to "Add to Gift Guide", gifts_wishlist_path(gift), method:'patch', class:"#{button}_button"
     end
   end
 

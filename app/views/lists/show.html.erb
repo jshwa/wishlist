@@ -1,6 +1,6 @@
-<%= tag.h1 "#{@list.user.username.capitalize}'s Wishlist" %>
+<%= tag.h1 "#{@list.user.username.capitalize}'s Gift Guide" %>
 
-<%= tag.h2 "About #{@list.user.username.capitalize}'s Wishlist:", id:"about-wishlist" %>
+<%= tag.h2 "About #{@list.user.username.capitalize}'s Gift Guide:", id:"about-wishlist" %>
   <%= tag.div class:"big_box wishlist_desc" do %>
     <p id="p-desc"><%= @list.description %></p><%= tag.br %>
     <%= link_to "Edit", edit_list_path(@list), id:"js-edit-btn" if current_user == @list.user %>

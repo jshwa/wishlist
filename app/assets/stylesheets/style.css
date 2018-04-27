@@ -187,6 +187,7 @@ ul.nav li:first-child {
 
 .welcome_back {
   width: 85%;
+  text-align: center;
 }
 
 .welcome_back h1 {
@@ -436,6 +437,7 @@ ul.wishlists {
   border-radius: 1rem;
   box-shadow: 3px 3px 5px #888888;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .item_button_added {
