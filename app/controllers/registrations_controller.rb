@@ -1,11 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
   def update
-      new_params = params.require(:user).permit(:email, :username, :current_password, :password, :password_confirmation)
+      new_params = params.require(:user).permit(:email, :username, :current_password, :password, :password_confirmation, :image)
       change_password = true
       if params[:user][:password].blank?
         params[:user].delete("password")
         params[:user].delete("password_confirmation")
-        new_params = params.require(:user).permit(:email, :username)
+        new_params = params.require(:user).permit(:email, :username, :image)
         change_password = false
       end
 
@@ -20,7 +20,7 @@ class RegistrationsController < Devise::RegistrationsController
 
       if is_valid
         set_flash_message :notice, :updated
-        sign_in @user, :bypass => true
+        bypass_sign_in(@user)
         redirect_to after_update_path_for(@user)
       else
         render "edit"
