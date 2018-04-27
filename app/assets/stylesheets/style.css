@@ -60,6 +60,8 @@ h1 {
   margin: 0;
   padding: 0;
   color: white;
+  white-space: pre;
+  font-family: "Avenir-Black"
 }
 
 .search {
@@ -145,21 +147,31 @@ ul.nav li:first-child {
 /**** Welcome ****/
 
 .intro_container {
-  height: 50vh;
+  height: 35vh;
   max-height: 600px;
   background: rgba(255,255,255,.8);
   color: #000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   font-family: helvetica;
 }
 
-.intro, .welcome_back {
-  text-align: center;
+.intro_container h1 {
+   margin: .5em;
 }
 
+.intro_container svg {
+   order: 1;
+   font-family: "Avenir-Black";
+   width: 60vw;
+}
+
+#get_started {
+   order: 3;
+   margin: 1em;
+}
 .welcome_back_container {
   min-height: 300px;
   max-height: 600px;
