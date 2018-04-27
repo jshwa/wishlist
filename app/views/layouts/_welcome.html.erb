@@ -1,11 +1,49 @@
 <% if !user_signed_in? %>
   <%= tag.div class:"intro_container" do %>
-    <%= tag.div class:"intro" do %>
-      <%= tag.h1 "Welcome to Wishlist!" %>
-      <%= tag.h3 "Find the perfect gift for him or her" %>
-      <%= tag.h3 "And help everyone else get you what you really wanted" %>
+   <%= tag.h1 "Find the perfect" %>
+   <svg viewBox="0 0 100 20">
+      <text x="0" y="15" fill="#3366ff">
+         <tspan>GiftFor</tspan>
+         <tspan style="font-family: 'Avenir-Roman'; visibility: hidden" fill="#0F2041">Mom
+            <animate attributeName="visibility" from="hidden" to="visible" dur=".01s" begin="0s" fill="freeze" />
+            <animate id="momIn" attributeName="y" from="-5" to="15" dur="1s" begin="0s; broOut.end" fill="freeze" />
+            <animate id="momOut" attributeName="y" from="15" to="35" dur="1s" begin="momIn.end + .5s" fill="freeze" />
+         </tspan>
+         <tspan dx="-43" dy="0" style="font-family: 'Avenir-Roman'; visibility: hidden" fill="#0F2041">Dad
+            <animate attributeName="visibility" from="hidden" to="visible" dur=".01s" begin="momOut.end" fill="freeze" />
+            <animate id="dadIn" attributeName="y" from="-5" to="15" dur="1s" begin="momOut.end" fill="freeze" />
+            <animate id="dadOut" attributeName="y" from="15" to="35" dur="1s" begin="dadIn.end + .5s" fill="freeze" />
+         </tspan>
+         <tspan dx="-35" dy="0" style="font-family: 'Avenir-Roman'; visibility: hidden" fill="#0F2041"> Him
+            <animate attributeName="visibility" from="hidden" to="visible" dur=".01s" begin=dadOut.end fill="freeze" />
+            <animate id="himIn" attributeName="y" from="-5" to="15" dur="1s" begin="dadOut.end" fill="freeze" />
+            <animate id="himOut" attributeName="y" from="15" to="35" dur="1s" begin="himIn.end + .5s" fill="freeze" />
+         </tspan>
+         <tspan dx="-33" dy="0" style="font-family: 'Avenir-Roman'; visibility: hidden" fill="#0F2041"> Her
+            <animate attributeName="visibility" from="hidden" to="visible" dur=".01s" begin="himOut.end" fill="freeze" />
+            <animate id="herIn" attributeName="y" from="-5" to="15" dur="1s" begin="himOut.end" fill="freeze" />
+            <animate id="herOut" attributeName="y" from="15" to="35" dur="1s" begin="herIn.end + .5s" fill="freeze" />
+         </tspan>
+         <tspan dx="-30" dy="0" style="font-family: 'Avenir-Roman'; visibility: hidden" fill="#0F2041"> Me
+            <animate attributeName="visibility" from="hidden" to="visible" dur=".01s" begin="herOut.end" fill="freeze" />
+            <animate id="meIn" attributeName="y" from="-5" to="15" dur="1s" begin="herOut.end" fill="freeze" />
+            <animate id="meOut" attributeName="y" from="15" to="35" dur="1s" begin="meIn.end + .5s" fill="freeze" />
+         </tspan>
+         <tspan dx="-30" dy="0" style="font-family: 'Avenir-Roman'; visibility: hidden" fill="#0F2041"> Wife
+            <animate attributeName="visibility" from="hidden" to="visible" dur=".01s" begin="meOut.end" fill="freeze" />
+            <animate id="wifeIn" attributeName="y" from="-5" to="15" dur="1s" begin="meOut.end" fill="freeze" />
+            <animate id="wifeOut" attributeName="y" from="15" to="35" dur="1s" begin="wifeIn.end + .5s" fill="freeze" />
+         </tspan>
+         <tspan dx="-35" dy="0" style="font-family: 'Avenir-Roman'; visibility: hidden" fill="#0F2041"> Bro
+            <animate attributeName="visibility" from="hidden" to="visible" dur=".01s" begin="wifeOut.end" fill="freeze" />
+            <animate id="broIn" attributeName="y" from="-5" to="15" dur="1s" begin="wifeOut.end" fill="freeze" />
+            <animate id="broOut" attributeName="y" from="15" to="35" dur="1s" begin="broIn.end + .5s" fill="freeze" />
+         </tspan>
+      </text>
+   </svg>
+   <div id="get_started">
       <%= button_to "Get Started", new_user_registration_path, method:'get', class:'welcome_btn' %>
-    <% end %>
+   </div>
   <% end %>
 <% else %>
   <%= tag.div class:"welcome_back_container" do %>
