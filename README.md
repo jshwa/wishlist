@@ -2,7 +2,7 @@
 
 ## Application Description
 
-Wishlist is a web application that manages users' wishlists, the gifts that make up wishlists and users' reviews of those gifts. It incorporates search functionality from the Amazon API to retrieve gifts and save them to the database.
+GiftFor is a web application that manages users' gift guide, the gifts that make up gift guide and users' reviews of those gifts. It incorporates search functionality from the Amazon API to retrieve gifts and save them to the database.
 
 ## Installation
 
