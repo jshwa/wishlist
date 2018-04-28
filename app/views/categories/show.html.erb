@@ -25,18 +25,6 @@
       <li><a href="/gifts/{{id}}"><img src="{{image}}"></a>
           <h4><a href="/gifts/{{id}}">{{name}}</a></h4>
           <p></p>
-          {{#if on_list}}
-            <form class="button_to" method="get" action="/lists/<%= current_user.id %>">
-              <input class="card_button_added" type="submit" value="On Your Wishlist">
-            </form>
-          {{else}}
-            <form class="button_to" method="post" action="/gifts/wishlists/{{id}}">
-              <input type="hidden" name="_method" value="patch">
-              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-              <input class="card_button" type="submit" value="Add to Wishlist">
-            </form>
-          {{/if}}
-          <p></p>
       </li>
       {{/each}}
   </div>
