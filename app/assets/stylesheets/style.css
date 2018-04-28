@@ -61,7 +61,7 @@ h1 {
   padding: 0;
   color: white;
   white-space: pre;
-  font-family: "Avenir-Black"
+  font-family: "Avenir-Black", helvetica;
 }
 
 .search {
@@ -164,7 +164,7 @@ ul.nav li:first-child {
 
 .intro_container svg {
    order: 1;
-   font-family: "Avenir-Black";
+   font-family: "Avenir-Black", Helvetica;
    width: 60vw;
 }
 
