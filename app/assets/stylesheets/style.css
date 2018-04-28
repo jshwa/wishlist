@@ -318,6 +318,11 @@ ul.wishlists {
   object-fit: cover;
 }
 
+.noIndent {
+   margin: 0;
+   padding: 0;
+}
+
 .edit_wishlist_desc,
 .wishlist_desc {
   overflow: hidden;
@@ -417,6 +422,7 @@ ul.wishlists {
   position: absolute;
   bottom: 1.5em;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .card_button_added {

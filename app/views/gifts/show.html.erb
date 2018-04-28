@@ -10,6 +10,14 @@
     <% end %>
 
     <%= tag.div class:"gift_info" do %>
+      <%= tag.h3 "Gift Guides:" %>
+         <%= tag.ul class:"wishlists noIndent" do %>
+         <% @gift.users.each do |user| %>
+            <%= tag.li do %>
+               <%= link_to (image_tag user.image), list_path(user.list) if user %>
+            <% end %>
+         <% end %>
+      <% end %>
       <%= tag.h3 "Description:" %><%= @gift.description %> <%= tag.br %><%= tag.br %>
         <strong>Price:</strong> <%= number_to_currency(@gift.price) %><%= tag.br %><%= tag.br %>
         <%= link_to "See it on Amazon", @gift.url, target: "_blank", class:'amazon_button' %>
